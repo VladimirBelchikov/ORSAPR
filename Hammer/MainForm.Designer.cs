@@ -1,6 +1,6 @@
 ﻿namespace Hammer
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Param1textBox = new System.Windows.Forms.TextBox();
             this.Param1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.Param6textBox = new System.Windows.Forms.TextBox();
+            this.Param5textBox = new System.Windows.Forms.TextBox();
+            this.Param4textBox = new System.Windows.Forms.TextBox();
+            this.Param3textBox = new System.Windows.Forms.TextBox();
+            this.Param2textBox = new System.Windows.Forms.TextBox();
+            this.Param7textBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,12 +45,12 @@
             this.buildButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // Param1textBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(188, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.Param1textBox.Location = new System.Drawing.Point(188, 58);
+            this.Param1textBox.Name = "Param1textBox";
+            this.Param1textBox.Size = new System.Drawing.Size(100, 20);
+            this.Param1textBox.TabIndex = 0;
             // 
             // Param1
             // 
@@ -61,47 +61,47 @@
             this.Param1.TabIndex = 1;
             this.Param1.Text = "Param1:";
             // 
-            // textBox2
+            // Param6textBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(188, 188);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 2;
+            this.Param6textBox.Location = new System.Drawing.Point(188, 188);
+            this.Param6textBox.Name = "Param6textBox";
+            this.Param6textBox.Size = new System.Drawing.Size(100, 20);
+            this.Param6textBox.TabIndex = 2;
             // 
-            // textBox3
+            // Param5textBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(188, 162);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 3;
+            this.Param5textBox.Location = new System.Drawing.Point(188, 162);
+            this.Param5textBox.Name = "Param5textBox";
+            this.Param5textBox.Size = new System.Drawing.Size(100, 20);
+            this.Param5textBox.TabIndex = 3;
             // 
-            // textBox4
+            // Param4textBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(188, 136);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 4;
+            this.Param4textBox.Location = new System.Drawing.Point(188, 136);
+            this.Param4textBox.Name = "Param4textBox";
+            this.Param4textBox.Size = new System.Drawing.Size(100, 20);
+            this.Param4textBox.TabIndex = 4;
             // 
-            // textBox5
+            // Param3textBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(188, 110);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 5;
+            this.Param3textBox.Location = new System.Drawing.Point(188, 110);
+            this.Param3textBox.Name = "Param3textBox";
+            this.Param3textBox.Size = new System.Drawing.Size(100, 20);
+            this.Param3textBox.TabIndex = 5;
             // 
-            // textBox6
+            // Param2textBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(188, 84);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 6;
+            this.Param2textBox.Location = new System.Drawing.Point(188, 84);
+            this.Param2textBox.Name = "Param2textBox";
+            this.Param2textBox.Size = new System.Drawing.Size(100, 20);
+            this.Param2textBox.TabIndex = 6;
             // 
-            // textBox7
+            // Param7textBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(188, 214);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 7;
+            this.Param7textBox.Location = new System.Drawing.Point(188, 214);
+            this.Param7textBox.Name = "Param7textBox";
+            this.Param7textBox.Size = new System.Drawing.Size(100, 20);
+            this.Param7textBox.TabIndex = 7;
             // 
             // label1
             // 
@@ -165,6 +165,7 @@
             this.buildButton.TabIndex = 14;
             this.buildButton.Text = "Build";
             this.buildButton.UseVisualStyleBackColor = true;
+            this.buildButton.Click += new System.EventHandler(this.buildButton_Click);
             // 
             // Form1
             // 
@@ -178,14 +179,14 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.Param7textBox);
+            this.Controls.Add(this.Param2textBox);
+            this.Controls.Add(this.Param3textBox);
+            this.Controls.Add(this.Param4textBox);
+            this.Controls.Add(this.Param5textBox);
+            this.Controls.Add(this.Param6textBox);
             this.Controls.Add(this.Param1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Param1textBox);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -195,14 +196,14 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Param1textBox;
         private System.Windows.Forms.Label Param1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox Param6textBox;
+        private System.Windows.Forms.TextBox Param5textBox;
+        private System.Windows.Forms.TextBox Param4textBox;
+        private System.Windows.Forms.TextBox Param3textBox;
+        private System.Windows.Forms.TextBox Param2textBox;
+        private System.Windows.Forms.TextBox Param7textBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
