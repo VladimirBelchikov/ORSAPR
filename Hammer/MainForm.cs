@@ -7,28 +7,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Hammer.MODEL;
+
 
 namespace Hammer
 {
     public partial class MainForm : Form
     {
-        public HammerParameters _hammerParameters;
+        private readonly HammerParameters _hammerParameters;
+
         public MainForm()
         {
             InitializeComponent();
+
+            _hammerParameters = new HammerParameters();
         }
 
         private void buildButton_Click(object sender, EventArgs e)
         {
             try
             {
-                _hammerParameters.Param1 = int.Parse(Param1textBox.Text);
-                _hammerParameters.Param2 = int.Parse(Param2textBox.Text);
-                _hammerParameters.Param3 = int.Parse(Param3textBox.Text);
-                _hammerParameters.Param4 = int.Parse(Param4textBox.Text);
-                _hammerParameters.Param5 = int.Parse(Param5textBox.Text);
-                _hammerParameters.Param6 = int.Parse(Param6textBox.Text);
-                _hammerParameters.Param7 = int.Parse(Param7textBox.Text);
+                _hammerParameters.HandleParametrs.Length = int.Parse(HandleLengthTextBox.Text);
+                _hammerParameters.HandleParametrs.Height = int.Parse(HandleHeightTextBox.Text);
+                _hammerParameters.HandleParametrs.Width = int.Parse(HandleWidthTextBox.Text);
+                _hammerParameters.HeadParametrs.Length = int.Parse(HeadLengthTextBox.Text);
+                _hammerParameters.HeadParametrs.Width = int.Parse(HeadWidthTextBox.Text);
+                _hammerParameters.HeadParametrs.TipWidth = int.Parse(TipWidthTextBox.Text);
+                _hammerParameters.HeadParametrs.ToeLength = int.Parse(ToeLengthTextBox.Text);
+                _hammerParameters.HeadParametrs.HoleDiameter = int.Parse(HoleDiameterTextBox.Text);
+
+
                 DialogResult = DialogResult.OK;
                 Close();
             }

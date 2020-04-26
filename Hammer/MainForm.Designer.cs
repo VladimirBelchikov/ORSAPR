@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Param1textBox = new System.Windows.Forms.TextBox();
+            this.HeadLengthTextBox = new System.Windows.Forms.TextBox();
             this.Param1 = new System.Windows.Forms.Label();
-            this.Param6textBox = new System.Windows.Forms.TextBox();
-            this.Param5textBox = new System.Windows.Forms.TextBox();
-            this.Param4textBox = new System.Windows.Forms.TextBox();
-            this.Param3textBox = new System.Windows.Forms.TextBox();
-            this.Param2textBox = new System.Windows.Forms.TextBox();
-            this.Param7textBox = new System.Windows.Forms.TextBox();
+            this.HandleHeightTextBox = new System.Windows.Forms.TextBox();
+            this.ToeLengthTextBox = new System.Windows.Forms.TextBox();
+            this.TipWidthTextBox = new System.Windows.Forms.TextBox();
+            this.HoleDiameterTextBox = new System.Windows.Forms.TextBox();
+            this.HeadWidthTextBox = new System.Windows.Forms.TextBox();
+            this.HandleLengthTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,123 +43,128 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.buildButton = new System.Windows.Forms.Button();
+            this.clearEditLinesButton = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.HandleWidthTextBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // Param1textBox
+            // HeadLengthTextBox
             // 
-            this.Param1textBox.Location = new System.Drawing.Point(188, 58);
-            this.Param1textBox.Name = "Param1textBox";
-            this.Param1textBox.Size = new System.Drawing.Size(100, 20);
-            this.Param1textBox.TabIndex = 0;
+            this.HeadLengthTextBox.Location = new System.Drawing.Point(115, 35);
+            this.HeadLengthTextBox.Name = "HeadLengthTextBox";
+            this.HeadLengthTextBox.Size = new System.Drawing.Size(105, 20);
+            this.HeadLengthTextBox.TabIndex = 0;
             // 
             // Param1
             // 
             this.Param1.AutoSize = true;
-            this.Param1.Location = new System.Drawing.Point(127, 61);
+            this.Param1.Location = new System.Drawing.Point(12, 38);
             this.Param1.Name = "Param1";
-            this.Param1.Size = new System.Drawing.Size(46, 13);
+            this.Param1.Size = new System.Drawing.Size(68, 13);
             this.Param1.TabIndex = 1;
-            this.Param1.Text = "Param1:";
+            this.Param1.Text = "Head length:";
             // 
-            // Param6textBox
+            // HandleHeightTextBox
             // 
-            this.Param6textBox.Location = new System.Drawing.Point(188, 188);
-            this.Param6textBox.Name = "Param6textBox";
-            this.Param6textBox.Size = new System.Drawing.Size(100, 20);
-            this.Param6textBox.TabIndex = 2;
+            this.HandleHeightTextBox.Location = new System.Drawing.Point(115, 201);
+            this.HandleHeightTextBox.Name = "HandleHeightTextBox";
+            this.HandleHeightTextBox.Size = new System.Drawing.Size(105, 20);
+            this.HandleHeightTextBox.TabIndex = 2;
             // 
-            // Param5textBox
+            // ToeLengthTextBox
             // 
-            this.Param5textBox.Location = new System.Drawing.Point(188, 162);
-            this.Param5textBox.Name = "Param5textBox";
-            this.Param5textBox.Size = new System.Drawing.Size(100, 20);
-            this.Param5textBox.TabIndex = 3;
+            this.ToeLengthTextBox.Location = new System.Drawing.Point(115, 132);
+            this.ToeLengthTextBox.Name = "ToeLengthTextBox";
+            this.ToeLengthTextBox.Size = new System.Drawing.Size(105, 20);
+            this.ToeLengthTextBox.TabIndex = 3;
             // 
-            // Param4textBox
+            // TipWidthTextBox
             // 
-            this.Param4textBox.Location = new System.Drawing.Point(188, 136);
-            this.Param4textBox.Name = "Param4textBox";
-            this.Param4textBox.Size = new System.Drawing.Size(100, 20);
-            this.Param4textBox.TabIndex = 4;
+            this.TipWidthTextBox.Location = new System.Drawing.Point(115, 106);
+            this.TipWidthTextBox.Name = "TipWidthTextBox";
+            this.TipWidthTextBox.Size = new System.Drawing.Size(105, 20);
+            this.TipWidthTextBox.TabIndex = 4;
             // 
-            // Param3textBox
+            // HoleDiameterTextBox
             // 
-            this.Param3textBox.Location = new System.Drawing.Point(188, 110);
-            this.Param3textBox.Name = "Param3textBox";
-            this.Param3textBox.Size = new System.Drawing.Size(100, 20);
-            this.Param3textBox.TabIndex = 5;
+            this.HoleDiameterTextBox.Location = new System.Drawing.Point(115, 81);
+            this.HoleDiameterTextBox.Name = "HoleDiameterTextBox";
+            this.HoleDiameterTextBox.Size = new System.Drawing.Size(105, 20);
+            this.HoleDiameterTextBox.TabIndex = 5;
             // 
-            // Param2textBox
+            // HeadWidthTextBox
             // 
-            this.Param2textBox.Location = new System.Drawing.Point(188, 84);
-            this.Param2textBox.Name = "Param2textBox";
-            this.Param2textBox.Size = new System.Drawing.Size(100, 20);
-            this.Param2textBox.TabIndex = 6;
+            this.HeadWidthTextBox.Location = new System.Drawing.Point(115, 58);
+            this.HeadWidthTextBox.Name = "HeadWidthTextBox";
+            this.HeadWidthTextBox.Size = new System.Drawing.Size(105, 20);
+            this.HeadWidthTextBox.TabIndex = 6;
             // 
-            // Param7textBox
+            // HandleLengthTextBox
             // 
-            this.Param7textBox.Location = new System.Drawing.Point(188, 214);
-            this.Param7textBox.Name = "Param7textBox";
-            this.Param7textBox.Size = new System.Drawing.Size(100, 20);
-            this.Param7textBox.TabIndex = 7;
+            this.HandleLengthTextBox.Location = new System.Drawing.Point(115, 227);
+            this.HandleLengthTextBox.Name = "HandleLengthTextBox";
+            this.HandleLengthTextBox.Size = new System.Drawing.Size(105, 20);
+            this.HandleLengthTextBox.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(127, 221);
+            this.label1.Location = new System.Drawing.Point(12, 230);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.Size = new System.Drawing.Size(76, 13);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Param1:";
+            this.label1.Text = "Handle length:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(127, 195);
+            this.label2.Location = new System.Drawing.Point(12, 204);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 13);
+            this.label2.Size = new System.Drawing.Size(76, 13);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Param1:";
+            this.label2.Text = "Handle height:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(127, 169);
+            this.label3.Location = new System.Drawing.Point(12, 135);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 10;
-            this.label3.Text = "Param1:";
+            this.label3.Text = "Toe length:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(127, 139);
+            this.label4.Location = new System.Drawing.Point(12, 109);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.Size = new System.Drawing.Size(53, 13);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Param1:";
+            this.label4.Text = "Tip width:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(127, 110);
+            this.label5.Location = new System.Drawing.Point(12, 84);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 13);
+            this.label5.Size = new System.Drawing.Size(75, 13);
             this.label5.TabIndex = 12;
-            this.label5.Text = "Param1:";
+            this.label5.Text = "Hole diameter:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(127, 84);
+            this.label6.Location = new System.Drawing.Point(12, 61);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 13);
+            this.label6.Size = new System.Drawing.Size(64, 13);
             this.label6.TabIndex = 13;
-            this.label6.Text = "Param1:";
+            this.label6.Text = "Head width:";
             // 
             // buildButton
             // 
-            this.buildButton.Location = new System.Drawing.Point(201, 294);
+            this.buildButton.Location = new System.Drawing.Point(15, 297);
             this.buildButton.Name = "buildButton";
             this.buildButton.Size = new System.Drawing.Size(75, 23);
             this.buildButton.TabIndex = 14;
@@ -167,11 +172,61 @@
             this.buildButton.UseVisualStyleBackColor = true;
             this.buildButton.Click += new System.EventHandler(this.buildButton_Click);
             // 
-            // Form1
+            // clearEditLinesButton
+            // 
+            this.clearEditLinesButton.Location = new System.Drawing.Point(115, 297);
+            this.clearEditLinesButton.Name = "clearEditLinesButton";
+            this.clearEditLinesButton.Size = new System.Drawing.Size(105, 23);
+            this.clearEditLinesButton.TabIndex = 15;
+            this.clearEditLinesButton.Text = "Clear edit lines";
+            this.clearEditLinesButton.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(12, 256);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(72, 13);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Hendle width:";
+            // 
+            // HandleWidthTextBox
+            // 
+            this.HandleWidthTextBox.Location = new System.Drawing.Point(115, 253);
+            this.HandleWidthTextBox.Name = "HandleWidthTextBox";
+            this.HandleWidthTextBox.Size = new System.Drawing.Size(105, 20);
+            this.HandleWidthTextBox.TabIndex = 17;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(12, 9);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(138, 17);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "Head parameters:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.Location = new System.Drawing.Point(12, 170);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(151, 17);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Handle parameters:";
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 400);
+            this.ClientSize = new System.Drawing.Size(239, 346);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.HandleWidthTextBox);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.clearEditLinesButton);
             this.Controls.Add(this.buildButton);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -179,16 +234,16 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Param7textBox);
-            this.Controls.Add(this.Param2textBox);
-            this.Controls.Add(this.Param3textBox);
-            this.Controls.Add(this.Param4textBox);
-            this.Controls.Add(this.Param5textBox);
-            this.Controls.Add(this.Param6textBox);
+            this.Controls.Add(this.HandleLengthTextBox);
+            this.Controls.Add(this.HeadWidthTextBox);
+            this.Controls.Add(this.HoleDiameterTextBox);
+            this.Controls.Add(this.TipWidthTextBox);
+            this.Controls.Add(this.ToeLengthTextBox);
+            this.Controls.Add(this.HandleHeightTextBox);
             this.Controls.Add(this.Param1);
-            this.Controls.Add(this.Param1textBox);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Controls.Add(this.HeadLengthTextBox);
+            this.Name = "MainForm";
+            this.Text = "Hammer builder";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,14 +251,14 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox Param1textBox;
+        private System.Windows.Forms.TextBox HeadLengthTextBox;
         private System.Windows.Forms.Label Param1;
-        private System.Windows.Forms.TextBox Param6textBox;
-        private System.Windows.Forms.TextBox Param5textBox;
-        private System.Windows.Forms.TextBox Param4textBox;
-        private System.Windows.Forms.TextBox Param3textBox;
-        private System.Windows.Forms.TextBox Param2textBox;
-        private System.Windows.Forms.TextBox Param7textBox;
+        private System.Windows.Forms.TextBox HandleHeightTextBox;
+        private System.Windows.Forms.TextBox ToeLengthTextBox;
+        private System.Windows.Forms.TextBox TipWidthTextBox;
+        private System.Windows.Forms.TextBox HoleDiameterTextBox;
+        private System.Windows.Forms.TextBox HeadWidthTextBox;
+        private System.Windows.Forms.TextBox HandleLengthTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -211,6 +266,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button buildButton;
+        private System.Windows.Forms.Button clearEditLinesButton;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox HandleWidthTextBox;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }
 
