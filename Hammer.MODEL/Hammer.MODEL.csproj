@@ -84,14 +84,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HammerBuilder.cs" />
-    <Compile Include="HammerParameters.cs" />
-    <Compile Include="HandleParameters.cs" />
-    <Compile Include="HeadParametrs.cs" />
+    <Compile Include="Models\HammerParameters.cs" />
+    <Compile Include="Models\HandleParameters.cs" />
+    <Compile Include="Models\HeadParameters.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SolidWorksApi.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

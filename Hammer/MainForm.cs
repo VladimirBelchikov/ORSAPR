@@ -8,12 +8,14 @@ namespace Hammer
     public partial class MainForm : Form
     {
         private readonly HammerParameters _hammerParameters;
+        private readonly HammerBuilder _hammerBuilder;
 
         public MainForm()
         {
             InitializeComponent();
 
             _hammerParameters = new HammerParameters();
+            _hammerBuilder = new HammerBuilder(_hammerParameters);
         }
 
         private void buildButton_Click(object sender, EventArgs e)
@@ -29,6 +31,7 @@ namespace Hammer
                 _hammerParameters.HeadParametrs.ToeLength = int.Parse(ToeLengthTextBox.Text);
                 _hammerParameters.HeadParametrs.HoleDiameter = int.Parse(HoleDiameterTextBox.Text);
 
+                _hammerBuilder.CreateHammer();
 
                 DialogResult = DialogResult.OK;
                 Close();
@@ -65,6 +68,11 @@ namespace Hammer
         {
             if ((e.KeyChar <= 48 || e.KeyChar >= 59) && e.KeyChar != 8)
                 e.Handled = true;
+        }
+
+        private void startSolidWorksButton_Click(object sender, EventArgs e)
+        {
+            _hammerBuilder.OpenSolidWorks();
         }
     }
 }

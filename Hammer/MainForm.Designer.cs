@@ -235,6 +235,7 @@
             this.startSolidWorksButton.TabIndex = 9;
             this.startSolidWorksButton.Text = "Start SolidWorks";
             this.startSolidWorksButton.UseVisualStyleBackColor = true;
+            this.startSolidWorksButton.Click += new System.EventHandler(this.startSolidWorksButton_Click);
             // 
             // MainForm
             // 

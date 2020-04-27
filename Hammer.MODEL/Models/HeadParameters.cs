@@ -57,15 +57,13 @@ namespace Hammer.MODEL
 
             set
             {
-                
-                if (value < 30 || value > 80)
-                {
-                    throw new ArgumentException("Длина бойка не может быть менее 30мм или более 80мм");
-                }
-                else
-                {
-                    _headLength = value;
-                }
+
+                //if (value < 30 || value > 80)
+                //{
+                //    throw new ArgumentException("Длина бойка не может быть менее 30мм или более 80мм");
+                //}
+
+                _headLength = value;
             }
         }
 
@@ -78,16 +76,12 @@ namespace Hammer.MODEL
 
             set
             {
+                //if (value < 20 || value >50)
+                //{
+                //    throw new ArgumentException("Ширина бойка не можеть быть менее 20мм или более 50мм");
+                //}
 
-
-                if (value < 20 || value >50)
-                {
-                    throw new ArgumentException("Ширина бойка не можеть быть менее 20мм или более 50мм");
-                }
-                else
-                {
-                    _headWidth = value;
-                }
+                _headWidth = value;
             }
         }
 
@@ -100,14 +94,12 @@ namespace Hammer.MODEL
 
             set
             {
-                if (value < 15 || value > 40)
-                {
-                    throw new ArgumentException("Диаметр выреза не может быть менее 15мм или более 40мм");
-                }
-                else
-                {
-                    _holeDiameter = value;
-                }
+                //if (value < 15 || value > 40)
+                //{
+                //    throw new ArgumentException("Диаметр выреза не может быть менее 15мм или более 40мм");
+                //}
+
+                _holeDiameter = value;
             }
         }
 
@@ -120,16 +112,12 @@ namespace Hammer.MODEL
 
             set
             {
+                //if (value < 1 || value >10)
+                //{
+                //    throw new ArgumentException("Ширина V-образного наконечника не может быть менее 1мм или более 10мм");
+                //}
 
-
-                if (value < 1 || value >10)
-                {
-                    throw new ArgumentException("Ширина V-образного наконечника не может быть менее 1мм или более 10мм");
-                }
-                else
-                {
-                    _tipWidth = value;
-                }
+                _tipWidth = value;
             }
         }
 
@@ -142,16 +130,12 @@ namespace Hammer.MODEL
 
             set
             {
+                //if (value < 30 || value > 80)
+                //{
+                //    throw new ArgumentException("Длина наконечника не может быть менее 30мм или более 80мм");
+                //}
 
-
-                if (value < 30 || value > 80)
-                {
-                    throw new ArgumentException("Длина наконечника не может быть менее 30мм или более 80мм");
-                }
-                else
-                {
-                    _toeLength = value;
-                }
+                _toeLength = value;
             }
         }
 

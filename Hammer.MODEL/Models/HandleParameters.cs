@@ -43,14 +43,12 @@ namespace Hammer.MODEL
 
             set
             {
-                if (value < 130 || value < 280)
-                {
-                    throw new ArgumentException("Высота рукояти не может быть менее 130мм или более 280мм");
-                }
-                else
-                {
-                    _handleHeight = value;
-                }
+                //if (value < 130 || value < 280)
+                //{
+                //    throw new ArgumentException("Высота рукояти не может быть менее 130мм или более 280мм");
+                //}
+
+                _handleHeight = value;
             }
         }
 
@@ -65,14 +63,12 @@ namespace Hammer.MODEL
             {
 
 
-                if (value < 20 || value > 50)
-                {
-                    throw new ArgumentException("Длина рукояти не может быть менее 20мм или более 50мм");
-                }
-                else
-                {
-                    _handleLength = value;
-                }
+                //if (value < 20 || value > 50)
+                //{
+                //    throw new ArgumentException("Длина рукояти не может быть менее 20мм или более 50мм");
+                //}
+
+                _handleLength = value;
             }
         }
 
@@ -85,14 +81,12 @@ namespace Hammer.MODEL
 
             set
             {
-                if (value < 15 || value > 40)
-                {
-                    throw new ArgumentException("Ширина рукояти не может быть менее 15мм или более 40мм");
-                }
-                else
-                {
-                    _handleWidth = value;
-                }
+                //if (value < 15 || value > 40)
+                //{
+                //    throw new ArgumentException("Ширина рукояти не может быть менее 15мм или более 40мм");
+                //}
+
+                _handleWidth = value;
             }
         }
     }
