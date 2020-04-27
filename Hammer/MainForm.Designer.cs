@@ -48,6 +48,7 @@
             this.HandleWidthTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.startSolidWorksButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // HeadLengthTextBox
@@ -56,6 +57,7 @@
             this.HeadLengthTextBox.Name = "HeadLengthTextBox";
             this.HeadLengthTextBox.Size = new System.Drawing.Size(105, 20);
             this.HeadLengthTextBox.TabIndex = 0;
+            this.HeadLengthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // Param1
             // 
@@ -71,42 +73,48 @@
             this.HandleHeightTextBox.Location = new System.Drawing.Point(115, 201);
             this.HandleHeightTextBox.Name = "HandleHeightTextBox";
             this.HandleHeightTextBox.Size = new System.Drawing.Size(105, 20);
-            this.HandleHeightTextBox.TabIndex = 2;
+            this.HandleHeightTextBox.TabIndex = 5;
+            this.HandleHeightTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // ToeLengthTextBox
             // 
             this.ToeLengthTextBox.Location = new System.Drawing.Point(115, 132);
             this.ToeLengthTextBox.Name = "ToeLengthTextBox";
             this.ToeLengthTextBox.Size = new System.Drawing.Size(105, 20);
-            this.ToeLengthTextBox.TabIndex = 3;
+            this.ToeLengthTextBox.TabIndex = 4;
+            this.ToeLengthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // TipWidthTextBox
             // 
             this.TipWidthTextBox.Location = new System.Drawing.Point(115, 106);
             this.TipWidthTextBox.Name = "TipWidthTextBox";
             this.TipWidthTextBox.Size = new System.Drawing.Size(105, 20);
-            this.TipWidthTextBox.TabIndex = 4;
+            this.TipWidthTextBox.TabIndex = 3;
+            this.TipWidthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // HoleDiameterTextBox
             // 
             this.HoleDiameterTextBox.Location = new System.Drawing.Point(115, 81);
             this.HoleDiameterTextBox.Name = "HoleDiameterTextBox";
             this.HoleDiameterTextBox.Size = new System.Drawing.Size(105, 20);
-            this.HoleDiameterTextBox.TabIndex = 5;
+            this.HoleDiameterTextBox.TabIndex = 2;
+            this.HoleDiameterTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // HeadWidthTextBox
             // 
             this.HeadWidthTextBox.Location = new System.Drawing.Point(115, 58);
             this.HeadWidthTextBox.Name = "HeadWidthTextBox";
             this.HeadWidthTextBox.Size = new System.Drawing.Size(105, 20);
-            this.HeadWidthTextBox.TabIndex = 6;
+            this.HeadWidthTextBox.TabIndex = 1;
+            this.HeadWidthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // HandleLengthTextBox
             // 
             this.HandleLengthTextBox.Location = new System.Drawing.Point(115, 227);
             this.HandleLengthTextBox.Name = "HandleLengthTextBox";
             this.HandleLengthTextBox.Size = new System.Drawing.Size(105, 20);
-            this.HandleLengthTextBox.TabIndex = 7;
+            this.HandleLengthTextBox.TabIndex = 6;
+            this.HandleLengthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // label1
             // 
@@ -167,7 +175,7 @@
             this.buildButton.Location = new System.Drawing.Point(15, 297);
             this.buildButton.Name = "buildButton";
             this.buildButton.Size = new System.Drawing.Size(75, 23);
-            this.buildButton.TabIndex = 14;
+            this.buildButton.TabIndex = 8;
             this.buildButton.Text = "Build";
             this.buildButton.UseVisualStyleBackColor = true;
             this.buildButton.Click += new System.EventHandler(this.buildButton_Click);
@@ -177,9 +185,10 @@
             this.clearEditLinesButton.Location = new System.Drawing.Point(115, 297);
             this.clearEditLinesButton.Name = "clearEditLinesButton";
             this.clearEditLinesButton.Size = new System.Drawing.Size(105, 23);
-            this.clearEditLinesButton.TabIndex = 15;
+            this.clearEditLinesButton.TabIndex = 10;
             this.clearEditLinesButton.Text = "Clear edit lines";
             this.clearEditLinesButton.UseVisualStyleBackColor = true;
+            this.clearEditLinesButton.Click += new System.EventHandler(this.clearEditLinesButton_Click);
             // 
             // label7
             // 
@@ -195,7 +204,8 @@
             this.HandleWidthTextBox.Location = new System.Drawing.Point(115, 253);
             this.HandleWidthTextBox.Name = "HandleWidthTextBox";
             this.HandleWidthTextBox.Size = new System.Drawing.Size(105, 20);
-            this.HandleWidthTextBox.TabIndex = 17;
+            this.HandleWidthTextBox.TabIndex = 7;
+            this.HandleWidthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // label8
             // 
@@ -217,11 +227,21 @@
             this.label9.TabIndex = 19;
             this.label9.Text = "Handle parameters:";
             // 
+            // startSolidWorksButton
+            // 
+            this.startSolidWorksButton.Location = new System.Drawing.Point(39, 326);
+            this.startSolidWorksButton.Name = "startSolidWorksButton";
+            this.startSolidWorksButton.Size = new System.Drawing.Size(149, 23);
+            this.startSolidWorksButton.TabIndex = 9;
+            this.startSolidWorksButton.Text = "Start SolidWorks";
+            this.startSolidWorksButton.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(239, 346);
+            this.ClientSize = new System.Drawing.Size(239, 397);
+            this.Controls.Add(this.startSolidWorksButton);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.HandleWidthTextBox);
@@ -271,6 +291,7 @@
         private System.Windows.Forms.TextBox HandleWidthTextBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button startSolidWorksButton;
     }
 }
 

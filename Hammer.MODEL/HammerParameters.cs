@@ -1,26 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Hammer.MODEL
+﻿namespace Hammer.MODEL
 {
     public class HammerParameters
     {
+        /// <summary>
+        /// Переменная HeadParameters
+        /// </summary>
+        public HeadParametrs HeadParameters;
 
-        public HeadParametrs _headParameters;
+        /// <summary>
+        /// Переменная HandleParameters
+        /// </summary>
+        public HandleParameters HandleParameters;
 
-        public HandleParameters _handleParameters;
+        public HeadParametrs HeadParametrs { get => HeadParameters; set => HeadParameters = value; }
 
-        public HeadParametrs HeadParametrs { get { return _headParameters; } set { _headParameters = value; } }
-
-        public HandleParameters HandleParametrs { get { return _handleParameters; } set { _handleParameters = value; } }
+        public HandleParameters HandleParametrs { get => HandleParameters; set => HandleParameters = value; }
 
         public HammerParameters()
         {
-            _headParameters = new HeadParametrs();
-            _handleParameters = new HandleParameters();
+            HeadParameters = new HeadParametrs();
+            HandleParameters = new HandleParameters();
         }
     }
 }

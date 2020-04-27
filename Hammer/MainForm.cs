@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Hammer.MODEL;
 
@@ -44,6 +37,34 @@ namespace Hammer
             {
                 MessageBox.Show(exception.Message);
             }
+        }
+
+        /// <summary>
+        /// Очиста всех TextBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void clearEditLinesButton_Click(object sender, EventArgs e)
+        {
+            HeadLengthTextBox.Clear();
+            HeadWidthTextBox.Clear();
+            HoleDiameterTextBox.Clear();
+            TipWidthTextBox.Clear();
+            ToeLengthTextBox.Clear();
+            HandleHeightTextBox.Clear();
+            HandleLengthTextBox.Clear();
+            HandleWidthTextBox.Clear();
+        }
+
+        /// <summary>
+        /// Запрет на ввод любых символов, кроме цифр
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar <= 48 || e.KeyChar >= 59) && e.KeyChar != 8)
+                e.Handled = true;
         }
     }
 }
