@@ -33,8 +33,7 @@ namespace Hammer
 
                 _hammerBuilder.CreateHammer();
 
-                DialogResult = DialogResult.OK;
-                Close();
+                
             }
             catch (Exception exception)
             {
@@ -66,7 +65,7 @@ namespace Hammer
         /// <param name="e"></param>
         private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar <= 48 || e.KeyChar >= 59) && e.KeyChar != 8)
+            if ((e.KeyChar < 48 || e.KeyChar > 58) && e.KeyChar != 8)
                 e.Handled = true;
         }
 

@@ -36,23 +36,40 @@ namespace Hammer.MODEL
         }
         private void CreateHead()
         {
-            _solidWorksApi.LayerSelection();
+            _solidWorksApi.LayerSelection(1);
             _solidWorksApi.SketchSelection();
-            _solidWorksApi.DrawingRectangle(_hammerParameters.HeadParameters.Width, _hammerParameters.HeadParameters.Length);
+            _solidWorksApi.DrawingLine(0, 0, 0, _hammerParameters.HeadParameters.Width, 0, 0);
+            _solidWorksApi.DrawingLine(_hammerParameters.HeadParameters.Width, 0, 0, (_hammerParameters.HeadParameters.Width / 2) + (_hammerParameters.HeadParameters.TipWidth / 2), _hammerParameters.HeadParameters.ToeLength, 0);
+            _solidWorksApi.DrawingLine((_hammerParameters.HeadParameters.Width / 2) + (_hammerParameters.HeadParameters.TipWidth / 2), _hammerParameters.HeadParameters.ToeLength, 0, (_hammerParameters.HeadParameters.Width / 2) - (_hammerParameters.HeadParameters.TipWidth / 2), _hammerParameters.HeadParameters.ToeLength, 0);
+            _solidWorksApi.DrawingLine((_hammerParameters.HeadParameters.Width / 2) - (_hammerParameters.HeadParameters.TipWidth / 2), _hammerParameters.HeadParameters.ToeLength, 0, 0, 0, 0);
+
             _solidWorksApi.FigureElongationBySketch(_hammerParameters.HeadParameters.Width);
+
+            _solidWorksApi.LayerSelection(2);
+            _solidWorksApi.SketchSelection();
+
+
+            _solidWorksApi.DrawingLine(0, 0, 0, _hammerParameters.HeadParameters.Width, 0, 0);
+            _solidWorksApi.DrawingLine(_hammerParameters.HeadParameters.Width, 0, 0, _hammerParameters.HeadParameters.Width, _hammerParameters.HeadParameters.Width, 0);
+            _solidWorksApi.DrawingLine(_hammerParameters.HeadParameters.Width, _hammerParameters.HeadParameters.Width, 0, 0, _hammerParameters.HeadParameters.Width, 0);
+            _solidWorksApi.DrawingLine(0, _hammerParameters.HeadParameters.Width, 0, 0, 0, 0);
+
+            _solidWorksApi.FigureElongationBySketch(_hammerParameters.HeadParameters.Length);
             _solidWorksApi.SketchSelection();
             _solidWorksApi.FigureCutBySketch(_hammerParameters.HeadParameters.Width, false);
             _solidWorksApi.RemoveAllocations();
+            _solidWorksApi.LayerSelection(2);
         }
 
         private void CreateHandle()
         {
-            _solidWorksApi.LayerSelection();
+            _solidWorksApi.LayerSelection(3);
             _solidWorksApi.SketchSelection();
-            _solidWorksApi.CoordinatesSelection(0, 0, 0);
 
-            _solidWorksApi.DrawingCircle(3);
-            _solidWorksApi.FigureElongationBySketch(50);
+            _solidWorksApi.CoordinatesSelection(0, (_hammerParameters.HeadParameters.Width / 2), 10);
+
+            _solidWorksApi.DrawingCircle(0, (_hammerParameters.HeadParameters.Width / 2), 0, _hammerParameters.HandleParameters.Width);
+            _solidWorksApi.FigureElongationBySketch(_hammerParameters.HandleParameters.Length);
         }
     }
 }

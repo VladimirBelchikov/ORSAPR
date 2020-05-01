@@ -12,6 +12,10 @@ namespace Hammer.MODEL
 
         private const string TopAxisName = "Сверху";
 
+        private const string FrontAxisName = "Спереди";
+
+        private const string RightAxisName = "Справа";
+
         private const string NameView = "Изометрия";
 
         private const string SelectionAxisType = "PLANE";
@@ -50,19 +54,19 @@ namespace Hammer.MODEL
             _solidWorks.Visible = true;
         }
 
+        public void DrawingLine(double x1, double y1, double z1, double x2, double y2, double z2)
+        {
+            _model.SketchManager.CreateLine(x1, y1, z1, x2, y2, z2);
+        }
+
         public void DrawingRectangle(int xaxis, int yaxis, int center = 0)
         {
             _model.SketchManager.CreateCenterRectangle(center, 0, 0, xaxis / 2, yaxis / 2, 0);
         }
 
-        public void DrawingCircle(int radius)
+        public void DrawingCircle(double x, double y, double z, double radius)
         {
-            _model.SketchManager.CreateCircle(0, 0, 0, radius, radius, 0);
-        }
-
-        public void DrawingRectangleForLegs(int xaxis, int yaxis, int center = 0)
-        {
-            _model.SketchManager.CreateCornerRectangle(center, 0, 0, xaxis, yaxis, 0);
+            _model.SketchManager.CreateCircle(x, y, z, radius, radius, 0);
         }
 
         public void CreateSolidWorksFile()
@@ -71,9 +75,20 @@ namespace Hammer.MODEL
             _model = _solidWorks.IActiveDoc2;
         }
 
-        public void LayerSelection()
+        public void LayerSelection(int axis)
         {
-            _model.Extension.SelectByID2(TopAxisName, SelectionAxisType, 0, 0, 0, false, 0, null, 0);
+            if (axis == 1)
+            {
+                _model.Extension.SelectByID2(TopAxisName, SelectionAxisType, 0, 0, 0, false, 0, null, 0);
+            }
+            if (axis == 2)
+            {
+                _model.Extension.SelectByID2(FrontAxisName, SelectionAxisType, 0, 0, 0, false, 0, null, 0);
+            }
+            if (axis == 3)
+            {
+                _model.Extension.SelectByID2(RightAxisName, SelectionAxisType, 0, 0, 0, false, 0, null, 0);
+            }
         }
 
         public void SketchSelection()
@@ -81,20 +96,14 @@ namespace Hammer.MODEL
             _model.SketchManager.InsertSketch(true);
         }
 
-        public void SetIsometricView()
-        {
-            _model.ShowNamedView2(NameView, -1);
-            _model.ViewZoomtofit2();
-        }
-
         public void RemoveAllocations()
         {
             _model.ClearSelection2(true);
         }
 
-        public void CoordinatesSelection(int Xaxis, int yAxis, int zAxis)
+        public void CoordinatesSelection(double xAxis, double yAxis, double zAxis)
         {
-            _model.Extension.SelectByID2(string.Empty, SelectionByPointsType, Xaxis, yAxis, zAxis, false, 40, null, 0);
+            _model.Extension.SelectByID2(RightAxisName, SelectionAxisType, xAxis, yAxis, zAxis, false, 0, null, 0);
         }
 
         public void FigureCutBySketch(int height, bool upDirection = true)
@@ -108,12 +117,5 @@ namespace Hammer.MODEL
             _model.FeatureManager.FeatureExtrusion2(true, false, false, 0, 0, height, 0.01, false, false, false, false,
                1.74532925199433E-02, 1.74532925199433E-02, false, false, false, false, true, true, true, 0, 0, false);
         }
-
-        public void SelectLayerByRay(int height)
-        {
-            _model.Extension.SelectByRay(0, height, 0, 1, height, 1, 1, 2, false, 0, 0);
-        }
-
-        // public void MirrorPart(int)
     }
 }
