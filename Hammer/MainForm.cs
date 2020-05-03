@@ -69,6 +69,11 @@ namespace Hammer
                 e.Handled = true;
         }
 
+        /// <summary>
+        /// Запуск программы SolidWorks
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void startSolidWorksButton_Click(object sender, EventArgs e)
         {
             _hammerBuilder.OpenSolidWorks();

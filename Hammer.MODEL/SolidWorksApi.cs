@@ -65,8 +65,13 @@ namespace Hammer.MODEL
         }
 
         public void DrawingCircle(double x, double y, double z, double radius)
+        { 
+            _model.SketchManager.CreateCircle(x, radius, z, 0, radius, 0);
+        }
+
+        public void DrawingCircleByRadius(double x, double y, double z, double radius)
         {
-            _model.SketchManager.CreateCircle(x, y, z, radius, radius, 0);
+            _model.SketchManager.CreateCircleByRadius(x, y, z, radius);
         }
 
         public void CreateSolidWorksFile()
@@ -92,7 +97,7 @@ namespace Hammer.MODEL
         }
 
 
-        //public void Ra
+        
 
         public void SketchSelection()
         {
@@ -120,5 +125,6 @@ namespace Hammer.MODEL
             _model.FeatureManager.FeatureExtrusion2(true, false, false, 0, 0, height, 0.01, false, false, false, false,
                1.74532925199433E-02, 1.74532925199433E-02, false, false, false, false, true, true, true, 0, 0, false);
         }
+
     }
 }

@@ -49,7 +49,7 @@ namespace Hammer.MODEL
             _solidWorksApi.LayerSelection(2);
             _solidWorksApi.SketchSelection();
 
-
+           // _solidWorksApi.DrawingRectangle(_hammerParameters.HeadParameters.Width, _hammerParameters.HeadParameters.Width);
             _solidWorksApi.DrawingLine(0, 0, 0, _hammerParameters.HeadParameters.Width, 0, 0);
             _solidWorksApi.DrawingLine(_hammerParameters.HeadParameters.Width, 0, 0, _hammerParameters.HeadParameters.Width, _hammerParameters.HeadParameters.Width, 0);
             _solidWorksApi.DrawingLine(_hammerParameters.HeadParameters.Width, _hammerParameters.HeadParameters.Width, 0, 0, _hammerParameters.HeadParameters.Width, 0);
@@ -59,18 +59,25 @@ namespace Hammer.MODEL
             _solidWorksApi.SketchSelection();
             _solidWorksApi.FigureCutBySketch(_hammerParameters.HeadParameters.Width, false);
             _solidWorksApi.RemoveAllocations();
-            _solidWorksApi.LayerSelection(2);
         }
 
         private void CreateHandle()
         {
+            
             _solidWorksApi.LayerSelection(3);
-            _solidWorksApi.SketchSelection();
 
-            _solidWorksApi.CoordinatesSelection(0, (_hammerParameters.HeadParameters.Width / 2), 10);
 
-            _solidWorksApi.DrawingCircle(0, (_hammerParameters.HeadParameters.Width / 2), 0, _hammerParameters.HandleParameters.Width);
+            //_solidWorksApi.SketchSelection();
+            //_solidWorksApi.CoordinatesSelection(0, 0, 10);
+
+            
+            _solidWorksApi.DrawingCircleByRadius(-12, (_hammerParameters.HeadParameters.Width / 2),0,_hammerParameters.HandleParameters.Width);
+            //_solidWorksApi.DrawingCircle(0, 0, 0, _hammerParameters.HandleParameters.Width);
             _solidWorksApi.FigureElongationBySketch(_hammerParameters.HandleParameters.Length);
+
+            
+
+
         }
     }
 }
