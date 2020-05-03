@@ -49,6 +49,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.startSolidWorksButton = new System.Windows.Forms.Button();
+            this.TESTBUTTON = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // HeadLengthTextBox
@@ -57,7 +58,6 @@
             this.HeadLengthTextBox.Name = "HeadLengthTextBox";
             this.HeadLengthTextBox.Size = new System.Drawing.Size(105, 20);
             this.HeadLengthTextBox.TabIndex = 0;
-            this.HeadLengthTextBox.Text = "40";
             this.HeadLengthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // Param1
@@ -75,7 +75,6 @@
             this.HandleHeightTextBox.Name = "HandleHeightTextBox";
             this.HandleHeightTextBox.Size = new System.Drawing.Size(105, 20);
             this.HandleHeightTextBox.TabIndex = 5;
-            this.HandleHeightTextBox.Text = "2";
             this.HandleHeightTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // ToeLengthTextBox
@@ -84,7 +83,6 @@
             this.ToeLengthTextBox.Name = "ToeLengthTextBox";
             this.ToeLengthTextBox.Size = new System.Drawing.Size(105, 20);
             this.ToeLengthTextBox.TabIndex = 4;
-            this.ToeLengthTextBox.Text = "25";
             this.ToeLengthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // TipWidthTextBox
@@ -93,7 +91,6 @@
             this.TipWidthTextBox.Name = "TipWidthTextBox";
             this.TipWidthTextBox.Size = new System.Drawing.Size(105, 20);
             this.TipWidthTextBox.TabIndex = 3;
-            this.TipWidthTextBox.Text = "2";
             this.TipWidthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // HoleDiameterTextBox
@@ -102,7 +99,6 @@
             this.HoleDiameterTextBox.Name = "HoleDiameterTextBox";
             this.HoleDiameterTextBox.Size = new System.Drawing.Size(105, 20);
             this.HoleDiameterTextBox.TabIndex = 2;
-            this.HoleDiameterTextBox.Text = "2";
             this.HoleDiameterTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // HeadWidthTextBox
@@ -111,7 +107,6 @@
             this.HeadWidthTextBox.Name = "HeadWidthTextBox";
             this.HeadWidthTextBox.Size = new System.Drawing.Size(105, 20);
             this.HeadWidthTextBox.TabIndex = 1;
-            this.HeadWidthTextBox.Text = "15";
             this.HeadWidthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // HandleLengthTextBox
@@ -120,7 +115,6 @@
             this.HandleLengthTextBox.Name = "HandleLengthTextBox";
             this.HandleLengthTextBox.Size = new System.Drawing.Size(105, 20);
             this.HandleLengthTextBox.TabIndex = 6;
-            this.HandleLengthTextBox.Text = "100";
             this.HandleLengthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // label1
@@ -204,7 +198,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 13);
             this.label7.TabIndex = 16;
-            this.label7.Text = "Hendle width:";
+            this.label7.Text = "Handle width:";
             // 
             // HandleWidthTextBox
             // 
@@ -212,7 +206,6 @@
             this.HandleWidthTextBox.Name = "HandleWidthTextBox";
             this.HandleWidthTextBox.Size = new System.Drawing.Size(105, 20);
             this.HandleWidthTextBox.TabIndex = 7;
-            this.HandleWidthTextBox.Text = "3";
             this.HandleWidthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // label8
@@ -245,11 +238,22 @@
             this.startSolidWorksButton.UseVisualStyleBackColor = true;
             this.startSolidWorksButton.Click += new System.EventHandler(this.startSolidWorksButton_Click);
             // 
+            // TESTBUTTON
+            // 
+            this.TESTBUTTON.Location = new System.Drawing.Point(75, 362);
+            this.TESTBUTTON.Name = "TESTBUTTON";
+            this.TESTBUTTON.Size = new System.Drawing.Size(75, 23);
+            this.TESTBUTTON.TabIndex = 20;
+            this.TESTBUTTON.Text = "TEST";
+            this.TESTBUTTON.UseVisualStyleBackColor = true;
+            this.TESTBUTTON.Click += new System.EventHandler(this.TESTBUTTON_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(239, 397);
+            this.Controls.Add(this.TESTBUTTON);
             this.Controls.Add(this.startSolidWorksButton);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -301,6 +305,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button startSolidWorksButton;
+        private System.Windows.Forms.Button TESTBUTTON;
     }
 }
 

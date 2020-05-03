@@ -78,5 +78,17 @@ namespace Hammer
         {
             _hammerBuilder.OpenSolidWorks();
         }
+        // ТЕСТОВАЯ КНОПКА, УДАЛИТЬ!
+        private void TESTBUTTON_Click(object sender, EventArgs e)
+        {
+            HeadLengthTextBox.Text = "60";
+            HeadWidthTextBox.Text = "30";
+            HoleDiameterTextBox.Text = "20";
+            TipWidthTextBox.Text = "1";
+            ToeLengthTextBox.Text = "50";
+            HandleHeightTextBox.Text = "140";
+            HandleLengthTextBox.Text = "30";
+            HandleWidthTextBox.Text = "20";
+        }
     }
 }

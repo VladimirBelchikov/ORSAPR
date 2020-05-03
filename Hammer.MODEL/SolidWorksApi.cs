@@ -16,24 +16,9 @@ namespace Hammer.MODEL
 
         private const string RightAxisName = "Справа";
 
-        private const string NameView = "Изометрия";
-
         private const string SelectionAxisType = "PLANE";
 
-        private const string SelectionByPointsType = "FACE";
 
-        private const string SketchName = "Эскиз";
-
-
-        public void ClosingSolidWorks()
-        {
-            Process[] processes = Process.GetProcessesByName("SLDWORKS");
-            foreach (Process process in processes)
-            {
-                process.CloseMainWindow();
-                process.Kill();
-            }
-        }
         public object IsThereSolidWorks()
         {
             try
@@ -54,6 +39,10 @@ namespace Hammer.MODEL
             _solidWorks.Visible = true;
         }
 
+        public void CreatePlane()
+        {
+            _model.CreatePlaneAtOffset3(10, true, true);
+        }
         public void DrawingLine(double x1, double y1, double z1, double x2, double y2, double z2)
         {
             _model.SketchManager.CreateLine(x1, y1, z1, x2, y2, z2);
@@ -62,11 +51,6 @@ namespace Hammer.MODEL
         public void DrawingRectangle(int xaxis, int yaxis, int center = 0)
         {
             _model.SketchManager.CreateCenterRectangle(center, 0, 0, xaxis / 2, yaxis / 2, 0);
-        }
-
-        public void DrawingCircle(double x, double y, double z, double radius)
-        { 
-            _model.SketchManager.CreateCircle(x, radius, z, 0, radius, 0);
         }
 
         public void DrawingCircleByRadius(double x, double y, double z, double radius)
