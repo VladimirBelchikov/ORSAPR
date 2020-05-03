@@ -36,6 +36,7 @@ namespace Hammer.MODEL
         }
         private void CreateHead()
         {
+            //ПЕРЕДЕЛАТЬ ЦИФРЫ ЕБАНЫЕ 
             _solidWorksApi.LayerSelection(1);
             _solidWorksApi.SketchSelection();
             _solidWorksApi.DrawingLine(0, 0, 0, _hammerParameters.HeadParameters.Width, 0, 0);

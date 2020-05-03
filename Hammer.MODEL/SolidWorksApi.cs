@@ -91,6 +91,9 @@ namespace Hammer.MODEL
             }
         }
 
+
+        //public void Ra
+
         public void SketchSelection()
         {
             _model.SketchManager.InsertSketch(true);
