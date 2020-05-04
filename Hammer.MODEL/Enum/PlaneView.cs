@@ -1,4 +1,4 @@
-﻿namespace Hammer.MODEL
+﻿namespace Hammer.MODEL.Enum
 {
     public enum PlaneView
     {

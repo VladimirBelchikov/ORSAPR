@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Hammer.MODEL;
+using Hammer.MODEL.Exceptions;
 using Hammer.MODEL.Models;
 
 
@@ -24,19 +25,21 @@ namespace Hammer
             try
             {
                 _hammerParameters.HandleParameters.Length = int.Parse(HandleLengthTextBox.Text);
-                _hammerParameters.HandleParameters.Height = int.Parse(HandleHeightTextBox.Text);
-                _hammerParameters.HandleParameters.Width = int.Parse(HandleWidthTextBox.Text);
+                _hammerParameters.HandleParameters.Diameter = int.Parse(HandleDiameterTextBox.Text);
                 _hammerParameters.HeadParameters.Length = int.Parse(HeadLengthTextBox.Text);
                 _hammerParameters.HeadParameters.Width = int.Parse(HeadWidthTextBox.Text);
                 _hammerParameters.HeadParameters.TipWidth = int.Parse(TipWidthTextBox.Text);
                 _hammerParameters.HeadParameters.ToeLength = int.Parse(ToeLengthTextBox.Text);
-                _hammerParameters.HeadParameters.HoleDiameter = int.Parse(HoleDiameterTextBox.Text);
+                _hammerParameters.HeadParameters.Height = int.Parse(HeadHeightTextBox.Text);
+
+                var validatorParameters = new ValidatorParameters(_hammerParameters);
+
+                validatorParameters.CheckParametersHead();
+                validatorParameters.CheckParametersHandle();
 
                 _hammerBuilder.CreateHammer();
-
-                
             }
-            catch (Exception exception)
+            catch (ParametersExceptions exception)
             {
                 MessageBox.Show(exception.Message);
             }
@@ -51,12 +54,11 @@ namespace Hammer
         {
             HeadLengthTextBox.Clear();
             HeadWidthTextBox.Clear();
-            HoleDiameterTextBox.Clear();
             TipWidthTextBox.Clear();
             ToeLengthTextBox.Clear();
-            HandleHeightTextBox.Clear();
+            HeadHeightTextBox.Clear();
             HandleLengthTextBox.Clear();
-            HandleWidthTextBox.Clear();
+            HandleDiameterTextBox.Clear();
         }
 
         /// <summary>
@@ -85,12 +87,11 @@ namespace Hammer
         {
             HeadLengthTextBox.Text = "60";
             HeadWidthTextBox.Text = "30";
-            HoleDiameterTextBox.Text = "20";
-            TipWidthTextBox.Text = "1";
+            HeadHeightTextBox.Text = "30";
+            TipWidthTextBox.Text = "2";
             ToeLengthTextBox.Text = "50";
-            HandleHeightTextBox.Text = "140";
-            HandleLengthTextBox.Text = "30";
-            HandleWidthTextBox.Text = "20";
+            HandleLengthTextBox.Text = "130";
+            HandleDiameterTextBox.Text = "20";
         }
     }
 }

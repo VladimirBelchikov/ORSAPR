@@ -1,4 +1,5 @@
-﻿using Hammer.MODEL.Models;
+﻿using Hammer.MODEL.Enum;
+using Hammer.MODEL.Models;
 
 namespace Hammer.MODEL
 {
@@ -32,40 +33,59 @@ namespace Hammer.MODEL
         }
         private void CreateHead()
         {
-            _solidWorksApi.LayerSelection(PlaneView.TopAxisName);
-            _solidWorksApi.SketchSelection();
-            _solidWorksApi.DrawingLine(0, 0, 0, _hammerParameters.HeadParameters.Width, 0, 0);
-            _solidWorksApi.DrawingLine(_hammerParameters.HeadParameters.Width, 0, 0, (_hammerParameters.HeadParameters.Width / 2) + (_hammerParameters.HeadParameters.TipWidth / 2), _hammerParameters.HeadParameters.ToeLength, 0);
-            _solidWorksApi.DrawingLine((_hammerParameters.HeadParameters.Width / 2) + (_hammerParameters.HeadParameters.TipWidth / 2), _hammerParameters.HeadParameters.ToeLength, 0, (_hammerParameters.HeadParameters.Width / 2) - (_hammerParameters.HeadParameters.TipWidth / 2), _hammerParameters.HeadParameters.ToeLength, 0);
-            _solidWorksApi.DrawingLine((_hammerParameters.HeadParameters.Width / 2) - (_hammerParameters.HeadParameters.TipWidth / 2), _hammerParameters.HeadParameters.ToeLength, 0, 0, 0, 0);
+            // Отрисовка наконечника
+            PlaneSelection(PlaneView.TopAxisName);
+
+            _solidWorksApi.DrawingLine(0, 0, 0, _hammerParameters.HeadParameters.Height, 0, 0);
+            _solidWorksApi.DrawingLine(_hammerParameters.HeadParameters.Height, 0, 0, (_hammerParameters.HeadParameters.Height / 2) + (_hammerParameters.HeadParameters.TipWidth / 2), _hammerParameters.HeadParameters.ToeLength, 0);
+            _solidWorksApi.DrawingLine((_hammerParameters.HeadParameters.Height / 2) + (_hammerParameters.HeadParameters.TipWidth / 2), _hammerParameters.HeadParameters.ToeLength, 0, (_hammerParameters.HeadParameters.Height / 2) - (_hammerParameters.HeadParameters.TipWidth / 2), _hammerParameters.HeadParameters.ToeLength, 0);
+            _solidWorksApi.DrawingLine((_hammerParameters.HeadParameters.Height / 2) - (_hammerParameters.HeadParameters.TipWidth / 2), _hammerParameters.HeadParameters.ToeLength, 0, 0, 0, 0);
             _solidWorksApi.FigureElongationBySketch(_hammerParameters.HeadParameters.Width);
 
+            // Отрисовка основной части
+            PlaneSelection(PlaneView.FrontAxisName);
 
-            _solidWorksApi.LayerSelection(PlaneView.FrontAxisName);
-            _solidWorksApi.SketchSelection();
-            _solidWorksApi.DrawingLine(0, 0, 0, _hammerParameters.HeadParameters.Width, 0, 0);
-            _solidWorksApi.DrawingLine(_hammerParameters.HeadParameters.Width, 0, 0, _hammerParameters.HeadParameters.Width, _hammerParameters.HeadParameters.Width, 0);
-            _solidWorksApi.DrawingLine(_hammerParameters.HeadParameters.Width, _hammerParameters.HeadParameters.Width, 0, 0, _hammerParameters.HeadParameters.Width, 0);
-            _solidWorksApi.DrawingLine(0, _hammerParameters.HeadParameters.Width, 0, 0, 0, 0);
+            _solidWorksApi.DrawingCornerRectangle(_hammerParameters.HeadParameters.Height, _hammerParameters.HeadParameters.Width);
             _solidWorksApi.FigureElongationBySketch(_hammerParameters.HeadParameters.Length);
+
+
+            // Вырез под рукоять
+            PlaneSelection(PlaneView.RightAxisName);
+            
+            if (_hammerParameters.HandleParameters.Diameter > 24)
+            {
+                _solidWorksApi.DrawingCircleByRadius(-16, _hammerParameters.HeadParameters.Width / 2, 0, _hammerParameters.HandleParameters.Diameter / 2);
+            }
+            else
+            {
+                _solidWorksApi.DrawingCircleByRadius(-12, _hammerParameters.HeadParameters.Width / 2, 0, _hammerParameters.HandleParameters.Diameter / 2);
+            }
+            _solidWorksApi.FigureCutBySketch(_hammerParameters.HeadParameters.Width);
             _solidWorksApi.SketchSelection();
             _solidWorksApi.RemoveAllocations();
         }
 
         private void CreateHandle()
         {
-            _solidWorksApi.CreatePlane();
-            _solidWorksApi.LayerSelection(PlaneView.RightAxisName);
-            _solidWorksApi.SketchSelection();
-            if (_hammerParameters.HandleParameters.Width > 24)
+            PlaneSelection(PlaneView.RightAxisName);
+
+            if (_hammerParameters.HandleParameters.Diameter > 24)
             {
-                _solidWorksApi.DrawingCircleByRadius(-16, _hammerParameters.HeadParameters.Width / 2, 0, _hammerParameters.HandleParameters.Width / 2);
+                _solidWorksApi.DrawingCircleByRadius(-16, _hammerParameters.HeadParameters.Width / 2, 0, _hammerParameters.HandleParameters.Diameter / 2);
             }
             else
             {
-                _solidWorksApi.DrawingCircleByRadius(-12, _hammerParameters.HeadParameters.Width / 2, 0, _hammerParameters.HandleParameters.Width / 2);
+                _solidWorksApi.DrawingCircleByRadius(-12, _hammerParameters.HeadParameters.Width / 2, 0, _hammerParameters.HandleParameters.Diameter / 2);
             }
-            _solidWorksApi.FigureElongationBySketch(_hammerParameters.HandleParameters.Height);
+
+            _solidWorksApi.FigureElongationBySketch(_hammerParameters.HandleParameters.Length);
+        }
+
+        private void PlaneSelection(PlaneView planeView)
+        {
+            _solidWorksApi.CreatePlane();
+            _solidWorksApi.LayerSelection(planeView);
+            _solidWorksApi.SketchSelection();
         }
     }
 }

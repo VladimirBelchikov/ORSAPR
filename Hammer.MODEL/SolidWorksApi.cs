@@ -1,4 +1,5 @@
 ﻿using System;
+using Hammer.MODEL.Enum;
 using SolidWorks.Interop.sldworks;
 
 namespace Hammer.MODEL
@@ -10,7 +11,6 @@ namespace Hammer.MODEL
         private IModelDoc2 _model;
 
         private const string SelectionAxisType = "PLANE";
-
 
         public object IsThereSolidWorks()
         {
@@ -41,9 +41,9 @@ namespace Hammer.MODEL
             _model.SketchManager.CreateLine(x1, y1, z1, x2, y2, z2);
         }
 
-        public void DrawingRectangle(int xaxis, int yaxis, int center = 0)
+        public void DrawingCornerRectangle(int x, int y)
         {
-            _model.SketchManager.CreateCenterRectangle(center, 0, 0, xaxis / 2, yaxis / 2, 0);
+            _model.SketchManager.CreateCornerRectangle(0, 0, 0, x, y, 0);
         }
 
         public void DrawingCircleByRadius(double x, double y, double z, double radius)
@@ -72,9 +72,6 @@ namespace Hammer.MODEL
                 _model.Extension.SelectByID2("Справа", SelectionAxisType, 0, 0, 0, false, 0, null, 0);
             }
         }
-
-
-        
 
         public void SketchSelection()
         {
