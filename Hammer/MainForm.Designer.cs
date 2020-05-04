@@ -50,6 +50,7 @@
             this.TESTBUTTON = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -243,11 +244,22 @@
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(227, 693);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(1036, 55);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "СКОРО ДОРАБОТАЮ МАКЕТ (IN DEVELOP)";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1412, 799);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.TESTBUTTON);
             this.Controls.Add(this.startSolidWorksButton);
             this.Controls.Add(this.label8);
@@ -301,6 +313,7 @@
         private System.Windows.Forms.Button TESTBUTTON;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label5;
     }
 }
 
