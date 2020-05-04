@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using SolidWorks.Interop.sldworks;
 
 namespace Hammer.MODEL
@@ -9,12 +8,6 @@ namespace Hammer.MODEL
         private SldWorks _solidWorks;
 
         private IModelDoc2 _model;
-
-        private const string TopAxisName = "Сверху";
-
-        private const string FrontAxisName = "Спереди";
-
-        private const string RightAxisName = "Справа";
 
         private const string SelectionAxisType = "PLANE";
 
@@ -64,19 +57,19 @@ namespace Hammer.MODEL
             _model = _solidWorks.IActiveDoc2;
         }
 
-        public void LayerSelection(int axis)
+        public void LayerSelection(PlaneView planeView)
         {
-            if (axis == 1)
+            if (planeView == PlaneView.TopAxisName)
             {
-                _model.Extension.SelectByID2(TopAxisName, SelectionAxisType, 0, 0, 0, false, 0, null, 0);
+                _model.Extension.SelectByID2("Сверху", SelectionAxisType, 0, 0, 0, false, 0, null, 0);
             }
-            if (axis == 2)
+            if (planeView == PlaneView.FrontAxisName)
             {
-                _model.Extension.SelectByID2(FrontAxisName, SelectionAxisType, 0, 0, 0, false, 0, null, 0);
+                _model.Extension.SelectByID2("Спереди", SelectionAxisType, 0, 0, 0, false, 0, null, 0);
             }
-            if (axis == 3)
+            if (planeView == PlaneView.RightAxisName)
             {
-                _model.Extension.SelectByID2(RightAxisName, SelectionAxisType, 0, 0, 0, false, 0, null, 0);
+                _model.Extension.SelectByID2("Справа", SelectionAxisType, 0, 0, 0, false, 0, null, 0);
             }
         }
 
@@ -91,11 +84,6 @@ namespace Hammer.MODEL
         public void RemoveAllocations()
         {
             _model.ClearSelection2(true);
-        }
-
-        public void CoordinatesSelection(double xAxis, double yAxis, double zAxis)
-        {
-            _model.Extension.SelectByID2(RightAxisName, SelectionAxisType, xAxis, yAxis, zAxis, false, 0, null, 0);
         }
 
         public void FigureCutBySketch(int height, bool upDirection = true)

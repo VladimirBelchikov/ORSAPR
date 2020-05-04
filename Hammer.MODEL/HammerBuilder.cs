@@ -1,4 +1,6 @@
-﻿namespace Hammer.MODEL
+﻿using Hammer.MODEL.Models;
+
+namespace Hammer.MODEL
 {
     public class HammerBuilder
     {
@@ -30,8 +32,7 @@
         }
         private void CreateHead()
         {
-            //layer selection 
-            _solidWorksApi.LayerSelection(1);
+            _solidWorksApi.LayerSelection(PlaneView.TopAxisName);
             _solidWorksApi.SketchSelection();
             _solidWorksApi.DrawingLine(0, 0, 0, _hammerParameters.HeadParameters.Width, 0, 0);
             _solidWorksApi.DrawingLine(_hammerParameters.HeadParameters.Width, 0, 0, (_hammerParameters.HeadParameters.Width / 2) + (_hammerParameters.HeadParameters.TipWidth / 2), _hammerParameters.HeadParameters.ToeLength, 0);
@@ -40,7 +41,7 @@
             _solidWorksApi.FigureElongationBySketch(_hammerParameters.HeadParameters.Width);
 
 
-            _solidWorksApi.LayerSelection(2);
+            _solidWorksApi.LayerSelection(PlaneView.FrontAxisName);
             _solidWorksApi.SketchSelection();
             _solidWorksApi.DrawingLine(0, 0, 0, _hammerParameters.HeadParameters.Width, 0, 0);
             _solidWorksApi.DrawingLine(_hammerParameters.HeadParameters.Width, 0, 0, _hammerParameters.HeadParameters.Width, _hammerParameters.HeadParameters.Width, 0);
@@ -54,7 +55,7 @@
         private void CreateHandle()
         {
             _solidWorksApi.CreatePlane();
-            _solidWorksApi.LayerSelection(3);
+            _solidWorksApi.LayerSelection(PlaneView.RightAxisName);
             _solidWorksApi.SketchSelection();
             if (_hammerParameters.HandleParameters.Width > 24)
             {

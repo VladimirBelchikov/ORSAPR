@@ -1,24 +1,20 @@
-﻿namespace Hammer.MODEL
+﻿namespace Hammer.MODEL.Models
 {
     public class HammerParameters
     {
         /// <summary>
         /// Переменная HeadParameters
         /// </summary>
-        public HeadParametrs HeadParameters;
+        public HeadParameters HeadParameters { get; set; }
 
         /// <summary>
         /// Переменная HandleParameters
         /// </summary>
-        public HandleParameters HandleParameters;
-
-        public HeadParametrs HeadParametrs { get => HeadParameters; set => HeadParameters = value; }
-
-        public HandleParameters HandleParametrs { get => HandleParameters; set => HandleParameters = value; }
+        public HandleParameters HandleParameters { get; set; }
 
         public HammerParameters()
         {
-            HeadParameters = new HeadParametrs();
+            HeadParameters = new HeadParameters();
             HandleParameters = new HandleParameters();
         }
     }

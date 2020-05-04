@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Hammer.MODEL
+namespace Hammer.MODEL.Models
 {
-    public class HeadParametrs
+    public class HeadParameters
     {
         /// <summary>
         /// Переменная длины бойка
@@ -29,7 +29,7 @@ namespace Hammer.MODEL
         /// </summary>
         private int _toeLength;
 
-        public HeadParametrs() { }
+        public HeadParameters() { }
 
         /// <summary>
         /// Конструктор класса HeadParameters
@@ -39,7 +39,7 @@ namespace Hammer.MODEL
         /// <param name="holeDiameter"></param>
         /// <param name="tipWidth"></param>
         /// <param name="toeLength"></param>
-        public HeadParametrs(int headLength, int headWidth, int holeDiameter, int tipWidth, int toeLength)
+        public HeadParameters(int headLength, int headWidth, int holeDiameter, int tipWidth, int toeLength)
         {
             Length = headLength;
             Width = headWidth;

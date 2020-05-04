@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Hammer.MODEL;
+using Hammer.MODEL.Models;
 
 
 namespace Hammer
@@ -22,14 +23,14 @@ namespace Hammer
         {
             try
             {
-                _hammerParameters.HandleParametrs.Length = int.Parse(HandleLengthTextBox.Text);
-                _hammerParameters.HandleParametrs.Height = int.Parse(HandleHeightTextBox.Text);
-                _hammerParameters.HandleParametrs.Width = int.Parse(HandleWidthTextBox.Text);
-                _hammerParameters.HeadParametrs.Length = int.Parse(HeadLengthTextBox.Text);
-                _hammerParameters.HeadParametrs.Width = int.Parse(HeadWidthTextBox.Text);
-                _hammerParameters.HeadParametrs.TipWidth = int.Parse(TipWidthTextBox.Text);
-                _hammerParameters.HeadParametrs.ToeLength = int.Parse(ToeLengthTextBox.Text);
-                _hammerParameters.HeadParametrs.HoleDiameter = int.Parse(HoleDiameterTextBox.Text);
+                _hammerParameters.HandleParameters.Length = int.Parse(HandleLengthTextBox.Text);
+                _hammerParameters.HandleParameters.Height = int.Parse(HandleHeightTextBox.Text);
+                _hammerParameters.HandleParameters.Width = int.Parse(HandleWidthTextBox.Text);
+                _hammerParameters.HeadParameters.Length = int.Parse(HeadLengthTextBox.Text);
+                _hammerParameters.HeadParameters.Width = int.Parse(HeadWidthTextBox.Text);
+                _hammerParameters.HeadParameters.TipWidth = int.Parse(TipWidthTextBox.Text);
+                _hammerParameters.HeadParameters.ToeLength = int.Parse(ToeLengthTextBox.Text);
+                _hammerParameters.HeadParameters.HoleDiameter = int.Parse(HoleDiameterTextBox.Text);
 
                 _hammerBuilder.CreateHammer();
 
@@ -78,6 +79,7 @@ namespace Hammer
         {
             _hammerBuilder.OpenSolidWorks();
         }
+
         // ТЕСТОВАЯ КНОПКА, УДАЛИТЬ!
         private void TESTBUTTON_Click(object sender, EventArgs e)
         {
