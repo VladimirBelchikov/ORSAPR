@@ -30,9 +30,9 @@ namespace Hammer.Tests
         }
 
         private HammerParameters GetCorrectParametersHandle() => new HammerParameters
-            {
-                HandleParameters = { Diameter = 30, Length = 150 },
-                HeadParameters = { Width = 35 }
-            };
+        {
+            HandleParameters = { Diameter = 30, Length = 150 }, 
+            HeadParameters = { Width = 35 }
+        };
     }
 }

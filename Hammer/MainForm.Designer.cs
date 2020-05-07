@@ -165,7 +165,7 @@
             this.buildButton.TabIndex = 8;
             this.buildButton.Text = "Build";
             this.buildButton.UseVisualStyleBackColor = true;
-            this.buildButton.Click += new System.EventHandler(this.buildButton_Click);
+            this.buildButton.Click += new System.EventHandler(this.BuildButton_Click);
             // 
             // clearEditLinesButton
             // 
@@ -175,7 +175,7 @@
             this.clearEditLinesButton.TabIndex = 10;
             this.clearEditLinesButton.Text = "Clear edit lines";
             this.clearEditLinesButton.UseVisualStyleBackColor = true;
-            this.clearEditLinesButton.Click += new System.EventHandler(this.clearEditLinesButton_Click);
+            this.clearEditLinesButton.Click += new System.EventHandler(this.ClearEditLinesButton_Click);
             // 
             // label7
             // 
@@ -212,7 +212,7 @@
             this.startSolidWorksButton.TabIndex = 9;
             this.startSolidWorksButton.Text = "Start SolidWorks";
             this.startSolidWorksButton.UseVisualStyleBackColor = true;
-            this.startSolidWorksButton.Click += new System.EventHandler(this.startSolidWorksButton_Click);
+            this.startSolidWorksButton.Click += new System.EventHandler(this.StartSolidWorksButton_Click);
             // 
             // TESTBUTTON
             // 
@@ -247,18 +247,20 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(227, 693);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(552, 459);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(1036, 55);
+            this.label5.Size = new System.Drawing.Size(685, 124);
             this.label5.TabIndex = 23;
-            this.label5.Text = "СКОРО ДОРАБОТАЮ МАКЕТ (IN DEVELOP)";
+            this.label5.Text = "СКОРО ДОРАБОТАЮ МАКЕТ (IN DEVELOP)\r\nХочу внести в макет готовую деталь с пояснени" +
+    "ями,\r\n чтобы указать пользователю,\r\n на какой параметр будет влиять вводимое зна" +
+    "чение";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1412, 799);
+            this.ClientSize = new System.Drawing.Size(1418, 593);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.TESTBUTTON);
             this.Controls.Add(this.startSolidWorksButton);

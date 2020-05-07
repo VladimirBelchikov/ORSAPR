@@ -20,7 +20,7 @@ namespace Hammer
             _hammerBuilder = new HammerBuilder(_hammerParameters);
         }
 
-        private void buildButton_Click(object sender, EventArgs e)
+        private void BuildButton_Click(object sender, EventArgs e)
         {
             try
             {
@@ -50,7 +50,7 @@ namespace Hammer
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void clearEditLinesButton_Click(object sender, EventArgs e)
+        private void ClearEditLinesButton_Click(object sender, EventArgs e)
         {
             HeadLengthTextBox.Clear();
             HeadWidthTextBox.Clear();
@@ -77,7 +77,7 @@ namespace Hammer
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void startSolidWorksButton_Click(object sender, EventArgs e)
+        private void StartSolidWorksButton_Click(object sender, EventArgs e)
         {
             _hammerBuilder.OpenSolidWorks();
         }

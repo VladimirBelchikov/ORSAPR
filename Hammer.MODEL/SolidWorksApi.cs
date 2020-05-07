@@ -16,8 +16,10 @@ namespace Hammer.MODEL
         {
             try
             {
-                Guid guid = new Guid("d134b411-3689-497d-b2d7-a27cb1066648");
-                object processSolidWorks = System.Activator.CreateInstance(System.Type.GetTypeFromCLSID(guid));
+                //Guid guid = new Guid("d134b411-3689-497d-b2d7-a27cb1066648");
+
+
+                object processSolidWorks = System.Activator.CreateInstance(System.Type.GetTypeFromProgID("SldWorks.Application.28"));
                 return processSolidWorks;
             }
             catch
@@ -83,16 +85,18 @@ namespace Hammer.MODEL
             _model.ClearSelection2(true);
         }
 
-        public void FigureCutBySketch(int height, bool upDirection = true)
+        public void FigureCutBySketch(int height)
         {
-            _model.FeatureManager.FeatureCut4(true, false, upDirection, 0, 0, height, 0.01, false, false, false, false,
-               1.74532925199433E-02, 1.74532925199433E-02, false, false, false, false, false, true, true, true, true, false, 0, 0, false, false);
+            _model.FeatureManager.FeatureCut(true, false, true, 0, 0, height, 0.01, false, false, false, false,
+                1.74532925199433E-02, 1.74532925199433E-02, false, false, false, false, 
+                false, true, true);
         }
 
         public void FigureElongationBySketch(int height)
         {
             _model.FeatureManager.FeatureExtrusion2(true, false, false, 0, 0, height, 0.01, false, false, false, false,
-               1.74532925199433E-02, 1.74532925199433E-02, false, false, false, false, true, true, true, 0, 0, false);
+               1.74532925199433E-02, 1.74532925199433E-02, false, false, false, false, true,
+               true, true, 0, 0, false);
         }
 
     }
