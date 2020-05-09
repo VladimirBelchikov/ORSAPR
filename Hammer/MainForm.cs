@@ -93,5 +93,7 @@ namespace Hammer
             HandleLengthTextBox.Text = "130";
             HandleDiameterTextBox.Text = "20";
         }
+
+
     }
 }

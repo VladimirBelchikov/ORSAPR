@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.HeadLengthTextBox = new System.Windows.Forms.TextBox();
             this.Param1 = new System.Windows.Forms.Label();
             this.HeadHeightTextBox = new System.Windows.Forms.TextBox();
@@ -48,16 +47,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.startSolidWorksButton = new System.Windows.Forms.Button();
             this.TESTBUTTON = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // HeadLengthTextBox
             // 
-            this.HeadLengthTextBox.Location = new System.Drawing.Point(671, 81);
+            this.HeadLengthTextBox.Location = new System.Drawing.Point(102, 60);
             this.HeadLengthTextBox.Name = "HeadLengthTextBox";
             this.HeadLengthTextBox.Size = new System.Drawing.Size(105, 20);
             this.HeadLengthTextBox.TabIndex = 0;
@@ -66,7 +61,7 @@
             // Param1
             // 
             this.Param1.AutoSize = true;
-            this.Param1.Location = new System.Drawing.Point(686, 58);
+            this.Param1.Location = new System.Drawing.Point(12, 63);
             this.Param1.Name = "Param1";
             this.Param1.Size = new System.Drawing.Size(68, 13);
             this.Param1.TabIndex = 1;
@@ -74,15 +69,15 @@
             // 
             // HeadHeightTextBox
             // 
-            this.HeadHeightTextBox.Location = new System.Drawing.Point(67, 200);
+            this.HeadHeightTextBox.Location = new System.Drawing.Point(102, 85);
             this.HeadHeightTextBox.Name = "HeadHeightTextBox";
-            this.HeadHeightTextBox.Size = new System.Drawing.Size(85, 20);
+            this.HeadHeightTextBox.Size = new System.Drawing.Size(105, 20);
             this.HeadHeightTextBox.TabIndex = 5;
             this.HeadHeightTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // ToeLengthTextBox
             // 
-            this.ToeLengthTextBox.Location = new System.Drawing.Point(1091, 87);
+            this.ToeLengthTextBox.Location = new System.Drawing.Point(102, 110);
             this.ToeLengthTextBox.Name = "ToeLengthTextBox";
             this.ToeLengthTextBox.Size = new System.Drawing.Size(105, 20);
             this.ToeLengthTextBox.TabIndex = 4;
@@ -90,23 +85,23 @@
             // 
             // TipWidthTextBox
             // 
-            this.TipWidthTextBox.Location = new System.Drawing.Point(1289, 184);
+            this.TipWidthTextBox.Location = new System.Drawing.Point(102, 134);
             this.TipWidthTextBox.Name = "TipWidthTextBox";
-            this.TipWidthTextBox.Size = new System.Drawing.Size(73, 20);
+            this.TipWidthTextBox.Size = new System.Drawing.Size(105, 20);
             this.TipWidthTextBox.TabIndex = 3;
             this.TipWidthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // HeadWidthTextBox
             // 
-            this.HeadWidthTextBox.Location = new System.Drawing.Point(211, 99);
+            this.HeadWidthTextBox.Location = new System.Drawing.Point(102, 35);
             this.HeadWidthTextBox.Name = "HeadWidthTextBox";
-            this.HeadWidthTextBox.Size = new System.Drawing.Size(80, 20);
+            this.HeadWidthTextBox.Size = new System.Drawing.Size(105, 20);
             this.HeadWidthTextBox.TabIndex = 1;
             this.HeadWidthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // HandleLengthTextBox
             // 
-            this.HandleLengthTextBox.Location = new System.Drawing.Point(931, 372);
+            this.HandleLengthTextBox.Location = new System.Drawing.Point(102, 220);
             this.HandleLengthTextBox.Name = "HandleLengthTextBox";
             this.HandleLengthTextBox.Size = new System.Drawing.Size(105, 20);
             this.HandleLengthTextBox.TabIndex = 6;
@@ -115,7 +110,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1042, 375);
+            this.label1.Location = new System.Drawing.Point(9, 223);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 13);
             this.label1.TabIndex = 8;
@@ -124,7 +119,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(74, 184);
+            this.label2.Location = new System.Drawing.Point(12, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 13);
             this.label2.TabIndex = 9;
@@ -133,7 +128,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1108, 71);
+            this.label3.Location = new System.Drawing.Point(12, 113);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 10;
@@ -142,7 +137,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1297, 168);
+            this.label4.Location = new System.Drawing.Point(12, 137);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 13);
             this.label4.TabIndex = 11;
@@ -151,7 +146,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(218, 83);
+            this.label6.Location = new System.Drawing.Point(12, 38);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 13);
             this.label6.TabIndex = 13;
@@ -159,7 +154,7 @@
             // 
             // buildButton
             // 
-            this.buildButton.Location = new System.Drawing.Point(137, 447);
+            this.buildButton.Location = new System.Drawing.Point(10, 253);
             this.buildButton.Name = "buildButton";
             this.buildButton.Size = new System.Drawing.Size(75, 23);
             this.buildButton.TabIndex = 8;
@@ -169,7 +164,7 @@
             // 
             // clearEditLinesButton
             // 
-            this.clearEditLinesButton.Location = new System.Drawing.Point(237, 447);
+            this.clearEditLinesButton.Location = new System.Drawing.Point(102, 253);
             this.clearEditLinesButton.Name = "clearEditLinesButton";
             this.clearEditLinesButton.Size = new System.Drawing.Size(105, 23);
             this.clearEditLinesButton.TabIndex = 10;
@@ -180,15 +175,15 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(618, 371);
+            this.label7.Location = new System.Drawing.Point(9, 199);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 13);
+            this.label7.Size = new System.Drawing.Size(87, 13);
             this.label7.TabIndex = 16;
-            this.label7.Text = "Handle diameter";
+            this.label7.Text = "Handle diameter:";
             // 
             // HandleDiameterTextBox
             // 
-            this.HandleDiameterTextBox.Location = new System.Drawing.Point(708, 368);
+            this.HandleDiameterTextBox.Location = new System.Drawing.Point(102, 196);
             this.HandleDiameterTextBox.Name = "HandleDiameterTextBox";
             this.HandleDiameterTextBox.Size = new System.Drawing.Size(105, 20);
             this.HandleDiameterTextBox.TabIndex = 7;
@@ -206,7 +201,7 @@
             // 
             // startSolidWorksButton
             // 
-            this.startSolidWorksButton.Location = new System.Drawing.Point(155, 499);
+            this.startSolidWorksButton.Location = new System.Drawing.Point(35, 291);
             this.startSolidWorksButton.Name = "startSolidWorksButton";
             this.startSolidWorksButton.Size = new System.Drawing.Size(149, 23);
             this.startSolidWorksButton.TabIndex = 9;
@@ -216,7 +211,7 @@
             // 
             // TESTBUTTON
             // 
-            this.TESTBUTTON.Location = new System.Drawing.Point(191, 560);
+            this.TESTBUTTON.Location = new System.Drawing.Point(75, 320);
             this.TESTBUTTON.Name = "TESTBUTTON";
             this.TESTBUTTON.Size = new System.Drawing.Size(75, 23);
             this.TESTBUTTON.TabIndex = 20;
@@ -224,43 +219,21 @@
             this.TESTBUTTON.UseVisualStyleBackColor = true;
             this.TESTBUTTON.Click += new System.EventHandler(this.TESTBUTTON_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Hammer.Properties.Resources._2020_05_04_19_30_11;
-            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
-            this.pictureBox2.Location = new System.Drawing.Point(492, 36);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(928, 392);
-            this.pictureBox2.TabIndex = 22;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Hammer.Properties.Resources._2020_05_04_19_30_44;
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(36, 37);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(460, 391);
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(552, 459);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(12, 166);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(685, 124);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "СКОРО ДОРАБОТАЮ МАКЕТ (IN DEVELOP)\r\nХочу внести в макет готовую деталь с пояснени" +
-    "ями,\r\n чтобы указать пользователю,\r\n на какой параметр будет влиять вводимое зна" +
-    "чение";
+            this.label5.Size = new System.Drawing.Size(151, 17);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Handle parameters:";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1418, 593);
+            this.ClientSize = new System.Drawing.Size(222, 348);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.TESTBUTTON);
             this.Controls.Add(this.startSolidWorksButton);
@@ -281,12 +254,11 @@
             this.Controls.Add(this.HeadHeightTextBox);
             this.Controls.Add(this.Param1);
             this.Controls.Add(this.HeadLengthTextBox);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pictureBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
+            this.ShowIcon = false;
             this.Text = "Hammer builder";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,8 +285,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button startSolidWorksButton;
         private System.Windows.Forms.Button TESTBUTTON;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label5;
     }
 }
