@@ -29,13 +29,13 @@ namespace Hammer
         {
             try
             {
-                _hammerParameters.HandleParameters.Length = int.Parse(HandleLengthTextBox.Text);
-                _hammerParameters.HandleParameters.Diameter = int.Parse(HandleDiameterTextBox.Text);
-                _hammerParameters.HeadParameters.Length = int.Parse(HeadLengthTextBox.Text);
-                _hammerParameters.HeadParameters.Width = int.Parse(HeadWidthTextBox.Text);
-                _hammerParameters.HeadParameters.TipWidth = int.Parse(TipWidthTextBox.Text);
-                _hammerParameters.HeadParameters.ToeLength = int.Parse(ToeLengthTextBox.Text);
-                _hammerParameters.HeadParameters.Height = int.Parse(HeadHeightTextBox.Text);
+                _hammerParameters.HandleParameters.Length = double.Parse(HandleLengthTextBox.Text);
+                _hammerParameters.HandleParameters.Diameter = double.Parse(HandleDiameterTextBox.Text);
+                _hammerParameters.HeadParameters.Length = double.Parse(HeadLengthTextBox.Text);
+                _hammerParameters.HeadParameters.Width = double.Parse(HeadWidthTextBox.Text);
+                _hammerParameters.HeadParameters.TipWidth = double.Parse(TipWidthTextBox.Text);
+                _hammerParameters.HeadParameters.ToeLength = double.Parse(ToeLengthTextBox.Text);
+                _hammerParameters.HeadParameters.Height = double.Parse(HeadHeightTextBox.Text);
 
                 var validatorParameters = new ValidatorParameters(_hammerParameters);
 
@@ -67,13 +67,13 @@ namespace Hammer
         }
 
         /// <summary>
-        /// Запрет на ввод любых символов, кроме цифр
+        /// Запрет на ввод любых символов, кроме цифр, клавиши Backspace и запятой
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar < 48 || e.KeyChar > 58) && e.KeyChar != 8)
+            if ((e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar != 44 && e.KeyChar != 8)
                 e.Handled = true;
         }
 

@@ -70,7 +70,7 @@ namespace Hammer.MODEL
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>
-        public void DrawingCornerRectangle(int x, int y)
+        public void DrawingCornerRectangle(double x, double y)
         {
             _model.SketchManager.CreateCornerRectangle(0, 0, 0, x, y, 0);
         }
@@ -136,9 +136,9 @@ namespace Hammer.MODEL
         /// Метод для выреза по параметрам
         /// </summary>
         /// <param name="height"></param>
-        public void FigureCutBySketch(int height)
+        public void FigureCutBySketch(double length)
         {
-            _model.FeatureManager.FeatureCut(true, false, true, 0, 0, height, 0.01, false, false, false, false,
+            _model.FeatureManager.FeatureCut(true, false, true, 0, 0, length, 0.01, false, false, false, false,
                 1.74532925199433E-02, 1.74532925199433E-02, false, false, false, false, 
                 false, true, true);
         }
@@ -147,9 +147,9 @@ namespace Hammer.MODEL
         /// Метод для вытягивания по параметрам
         /// </summary>
         /// <param name="height"></param>
-        public void FigureElongationBySketch(int height)
+        public void FigureElongationBySketch(double length)
         {
-            _model.FeatureManager.FeatureExtrusion2(true, false, false, 0, 0, height, 0.01, false, false, false, false,
+            _model.FeatureManager.FeatureExtrusion2(true, false, false, 0, 0, length, 0.01, false, false, false, false,
                1.74532925199433E-02, 1.74532925199433E-02, false, false, false, false, true,
                true, true, 0, 0, false);
         }

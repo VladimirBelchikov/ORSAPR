@@ -5,12 +5,12 @@
         /// <summary>
         /// Переменная длины рукояти
         /// </summary>
-        public int Length { get; set; }
+        public double Length { get; set; }
 
         /// <summary>
         /// Переменная диаметра рукояти
         /// </summary>
-        public int Diameter { get; set; }
+        public double Diameter { get; set; }
 
         public HandleParameters() { }
     }

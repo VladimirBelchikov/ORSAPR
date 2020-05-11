@@ -154,9 +154,9 @@
             // 
             // buildButton
             // 
-            this.buildButton.Location = new System.Drawing.Point(10, 253);
+            this.buildButton.Location = new System.Drawing.Point(12, 253);
             this.buildButton.Name = "buildButton";
-            this.buildButton.Size = new System.Drawing.Size(75, 23);
+            this.buildButton.Size = new System.Drawing.Size(84, 23);
             this.buildButton.TabIndex = 8;
             this.buildButton.Text = "Build";
             this.buildButton.UseVisualStyleBackColor = true;
@@ -201,7 +201,7 @@
             // 
             // startSolidWorksButton
             // 
-            this.startSolidWorksButton.Location = new System.Drawing.Point(35, 291);
+            this.startSolidWorksButton.Location = new System.Drawing.Point(33, 282);
             this.startSolidWorksButton.Name = "startSolidWorksButton";
             this.startSolidWorksButton.Size = new System.Drawing.Size(149, 23);
             this.startSolidWorksButton.TabIndex = 9;
@@ -211,7 +211,7 @@
             // 
             // TESTBUTTON
             // 
-            this.TESTBUTTON.Location = new System.Drawing.Point(75, 320);
+            this.TESTBUTTON.Location = new System.Drawing.Point(61, 313);
             this.TESTBUTTON.Name = "TESTBUTTON";
             this.TESTBUTTON.Size = new System.Drawing.Size(75, 23);
             this.TESTBUTTON.TabIndex = 20;
