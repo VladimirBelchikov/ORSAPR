@@ -1,7 +1,4 @@
-﻿using System;
-using System.Dynamic;
-
-namespace Hammer.MODEL.Models
+﻿namespace Hammer.MODEL.Models
 {
     public class HeadParameters
     {
