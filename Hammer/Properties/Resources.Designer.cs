@@ -59,25 +59,5 @@ namespace Hammer.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _2020_05_04_19_30_11 {
-            get {
-                object obj = ResourceManager.GetObject("2020-05-04_19-30-11", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _2020_05_04_19_30_44 {
-            get {
-                object obj = ResourceManager.GetObject("2020-05-04_19-30-44", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
