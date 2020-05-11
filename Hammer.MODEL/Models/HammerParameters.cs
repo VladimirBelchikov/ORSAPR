@@ -1,4 +1,6 @@
-﻿namespace Hammer.MODEL.Models
+﻿using System.Runtime.Remoting.Messaging;
+
+namespace Hammer.MODEL.Models
 {
     public class HammerParameters
     {

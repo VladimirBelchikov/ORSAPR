@@ -7,13 +7,17 @@ namespace Hammer.MODEL
     {
         private readonly HammerParameters _hammerParameters;
 
+
+
         /// <summary>
         /// Конструктор
         /// </summary>
         /// <param name="hammerParameters"></param>
         public ValidatorParameters(HammerParameters hammerParameters)
         {
-            _hammerParameters = hammerParameters;
+           _hammerParameters = hammerParameters;
+           
+
         }
         
         /// <summary>
