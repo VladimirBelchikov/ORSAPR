@@ -7,14 +7,19 @@ namespace Hammer.MODEL
     {
         private readonly HammerParameters _hammerParameters;
 
-
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="hammerParameters"></param>
         public ValidatorParameters(HammerParameters hammerParameters)
         {
             _hammerParameters = hammerParameters;
         }
         
-
-        public void CheckParametersHead()
+        /// <summary>
+        /// Валидация параметров оголовья
+        /// </summary>
+        public void CheckHeadParameters()
         {
             if (string.IsNullOrEmpty(_hammerParameters.HeadParameters.Length.ToString()))
             {
@@ -64,6 +69,9 @@ namespace Hammer.MODEL
             }
         }
 
+        /// <summary>
+        /// Валидация параметров рукояти
+        /// </summary>
         public void CheckParametersHandle()
         {
             if (string.IsNullOrEmpty(_hammerParameters.HandleParameters.Length.ToString()))

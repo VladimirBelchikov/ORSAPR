@@ -12,6 +12,11 @@ namespace Hammer.MODEL
 
         private const string SelectionAxisType = "PLANE";
 
+        /// <summary>
+        /// Инициализация SolidWorks
+        /// </summary>
+        /// <returns></returns>
+
         public object IsThereSolidWorks()
         {
             try
@@ -28,37 +33,73 @@ namespace Hammer.MODEL
             }
         }
 
+        /// <summary>
+        /// Метод запуска SolidWorks
+        /// </summary>
+        /// <param name="processSolidWorks"></param>
         public void StartSolidWorks(object processSolidWorks)
         {
             _solidWorks = (SldWorks)processSolidWorks;
             _solidWorks.Visible = true;
         }
 
+        /// <summary>
+        /// Метод для создания плоскости
+        /// </summary>
         public void CreatePlane()
         {
             _model.CreatePlaneAtOffset3(10, true, true);
         }
+
+        /// <summary>
+        /// Метод отрисовки линии
+        /// </summary>
+        /// <param name="x1"></param>
+        /// <param name="y1"></param>
+        /// <param name="z1"></param>
+        /// <param name="x2"></param>
+        /// <param name="y2"></param>
+        /// <param name="z2"></param>
         public void DrawingLine(double x1, double y1, double z1, double x2, double y2, double z2)
         {
             _model.SketchManager.CreateLine(x1, y1, z1, x2, y2, z2);
         }
 
+        /// <summary>
+        /// Метод отрисовки углового прямоугольника
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
         public void DrawingCornerRectangle(int x, int y)
         {
             _model.SketchManager.CreateCornerRectangle(0, 0, 0, x, y, 0);
         }
 
+        /// <summary>
+        /// Метод отрисовки круга
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="z"></param>
+        /// <param name="radius"></param>
         public void DrawingCircleByRadius(double x, double y, double z, double radius)
         {
             _model.SketchManager.CreateCircleByRadius(x, y, z, radius);
         }
 
+        /// <summary>
+        /// Метод для создания ногово файла в SolidWorks
+        /// </summary>
         public void CreateSolidWorksFile()
         {
             _solidWorks.NewPart();
             _model = _solidWorks.IActiveDoc2;
         }
 
+        /// <summary>
+        /// Метод выбора вида
+        /// </summary>
+        /// <param name="planeView"></param>
         public void LayerSelection(PlaneView planeView)
         {
             if (planeView == PlaneView.TopAxisName)
@@ -75,16 +116,26 @@ namespace Hammer.MODEL
             }
         }
 
+        /// <summary>
+        /// Метод выбора эскиза
+        /// </summary>
         public void SketchSelection()
         {
             _model.SketchManager.InsertSketch(true);
         }
 
+        /// <summary>
+        /// Метод сброса заданной позиции
+        /// </summary>
         public void RemoveAllocations()
         {
             _model.ClearSelection2(true);
         }
 
+        /// <summary>
+        /// Метод для выреза по параметрам
+        /// </summary>
+        /// <param name="height"></param>
         public void FigureCutBySketch(int height)
         {
             _model.FeatureManager.FeatureCut(true, false, true, 0, 0, height, 0.01, false, false, false, false,
@@ -92,6 +143,10 @@ namespace Hammer.MODEL
                 false, true, true);
         }
 
+        /// <summary>
+        /// Метод для вытягивания по параметрам
+        /// </summary>
+        /// <param name="height"></param>
         public void FigureElongationBySketch(int height)
         {
             _model.FeatureManager.FeatureExtrusion2(true, false, false, 0, 0, height, 0.01, false, false, false, false,

@@ -6,27 +6,27 @@ namespace Hammer.MODEL.Models
     public class HeadParameters
     {
         /// <summary>
-        /// Валидация высоты бойка
+        /// Переменная высоты бойка
         /// </summary>
         public int Height { get; set; }
 
         /// <summary>
-        /// Валидация длины бойка
+        /// Переменная длины оголовья
         /// </summary>
         public int Length { get; set; }
 
         /// <summary>
-        /// Валидация ширины плоского бойка
+        /// Переманная ширины оголовья
         /// </summary>
         public int Width { get; set; }
 
         /// <summary>
-        /// Валидация ширины наконечника
+        /// Переменная ширины наконечника
         /// </summary>
         public int TipWidth { get; set; }
 
         /// <summary>
-        /// Валидация длины наконечника
+        /// Переменная длины носка
         /// </summary>
         public int ToeLength { get; set; }
 

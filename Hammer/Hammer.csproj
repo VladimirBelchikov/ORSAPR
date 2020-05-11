@@ -86,11 +86,6 @@
       <Name>Hammer.MODEL</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\2020-05-04_19-30-44.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\2020-05-04_19-30-11.png" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,12 +5,12 @@ namespace Hammer.MODEL.Models
     public class HandleParameters
     {
         /// <summary>
-        /// Валидация длины рукояти
+        /// Переменная длины рукояти
         /// </summary>
         public int Length { get; set; }
 
         /// <summary>
-        /// Валидация диаметра рукояти
+        /// Переменная диаметра рукояти
         /// </summary>
         public int Diameter { get; set; }
 

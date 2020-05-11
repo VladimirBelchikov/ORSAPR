@@ -20,6 +20,11 @@ namespace Hammer
             _hammerBuilder = new HammerBuilder(_hammerParameters);
         }
 
+        /// <summary>
+        /// Кнопка, вызывающая методы построения модели
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BuildButton_Click(object sender, EventArgs e)
         {
             try
@@ -34,7 +39,7 @@ namespace Hammer
 
                 var validatorParameters = new ValidatorParameters(_hammerParameters);
 
-                validatorParameters.CheckParametersHead();
+                validatorParameters.CheckHeadParameters();
                 validatorParameters.CheckParametersHandle();
 
                 _hammerBuilder.CreateHammer();
@@ -46,7 +51,7 @@ namespace Hammer
         }
 
         /// <summary>
-        /// Очиста всех TextBox
+        /// Очиста всех TextBox полей
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

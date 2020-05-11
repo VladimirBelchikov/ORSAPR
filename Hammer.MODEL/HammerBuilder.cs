@@ -10,6 +10,10 @@ namespace Hammer.MODEL
 
         private readonly object _solidWorks;
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="hammerParameters"></param>
         public HammerBuilder(HammerParameters hammerParameters)
         {
             _hammerParameters = hammerParameters;
@@ -19,11 +23,17 @@ namespace Hammer.MODEL
             _solidWorks = _solidWorksApi.IsThereSolidWorks();
         }
 
+        /// <summary>
+        /// Открытие SolidWorks
+        /// </summary>
         public void OpenSolidWorks()
         {
             _solidWorksApi.StartSolidWorks(_solidWorks);
         }
 
+        /// <summary>
+        /// Метод для создания молотка
+        /// </summary>
         public void CreateHammer()
         {
             _solidWorksApi.CreateSolidWorksFile();
@@ -31,6 +41,10 @@ namespace Hammer.MODEL
             CreateHead();
             CreateHandle();
         }
+
+        /// <summary>
+        /// Метод для создания оголовья
+        /// </summary>
         private void CreateHead()
         {
             // Отрисовка наконечника
@@ -65,6 +79,9 @@ namespace Hammer.MODEL
             _solidWorksApi.RemoveAllocations();
         }
 
+        /// <summary>
+        /// Метод для создания рукояти
+        /// </summary>
         private void CreateHandle()
         {
             PlaneSelection(PlaneView.RightAxisName);
@@ -81,6 +98,10 @@ namespace Hammer.MODEL
             _solidWorksApi.FigureElongationBySketch(_hammerParameters.HandleParameters.Length);
         }
 
+        /// <summary>
+        ///Выбор плоскости
+        /// </summary>
+        /// <param name="planeView"></param>
         private void PlaneSelection(PlaneView planeView)
         {
             _solidWorksApi.CreatePlane();
