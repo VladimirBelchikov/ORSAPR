@@ -55,7 +55,7 @@
             this.HeadLengthTextBox.Location = new System.Drawing.Point(102, 60);
             this.HeadLengthTextBox.Name = "HeadLengthTextBox";
             this.HeadLengthTextBox.Size = new System.Drawing.Size(105, 20);
-            this.HeadLengthTextBox.TabIndex = 0;
+            this.HeadLengthTextBox.TabIndex = 1;
             this.HeadLengthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // Param1
@@ -72,7 +72,7 @@
             this.HeadHeightTextBox.Location = new System.Drawing.Point(102, 85);
             this.HeadHeightTextBox.Name = "HeadHeightTextBox";
             this.HeadHeightTextBox.Size = new System.Drawing.Size(105, 20);
-            this.HeadHeightTextBox.TabIndex = 5;
+            this.HeadHeightTextBox.TabIndex = 2;
             this.HeadHeightTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // ToeLengthTextBox
@@ -80,7 +80,7 @@
             this.ToeLengthTextBox.Location = new System.Drawing.Point(102, 110);
             this.ToeLengthTextBox.Name = "ToeLengthTextBox";
             this.ToeLengthTextBox.Size = new System.Drawing.Size(105, 20);
-            this.ToeLengthTextBox.TabIndex = 4;
+            this.ToeLengthTextBox.TabIndex = 3;
             this.ToeLengthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // TipWidthTextBox
@@ -88,7 +88,7 @@
             this.TipWidthTextBox.Location = new System.Drawing.Point(102, 134);
             this.TipWidthTextBox.Name = "TipWidthTextBox";
             this.TipWidthTextBox.Size = new System.Drawing.Size(105, 20);
-            this.TipWidthTextBox.TabIndex = 3;
+            this.TipWidthTextBox.TabIndex = 4;
             this.TipWidthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // HeadWidthTextBox
@@ -96,7 +96,7 @@
             this.HeadWidthTextBox.Location = new System.Drawing.Point(102, 35);
             this.HeadWidthTextBox.Name = "HeadWidthTextBox";
             this.HeadWidthTextBox.Size = new System.Drawing.Size(105, 20);
-            this.HeadWidthTextBox.TabIndex = 1;
+            this.HeadWidthTextBox.TabIndex = 0;
             this.HeadWidthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // HandleLengthTextBox
@@ -157,7 +157,7 @@
             this.buildButton.Location = new System.Drawing.Point(12, 253);
             this.buildButton.Name = "buildButton";
             this.buildButton.Size = new System.Drawing.Size(84, 23);
-            this.buildButton.TabIndex = 8;
+            this.buildButton.TabIndex = 7;
             this.buildButton.Text = "Build";
             this.buildButton.UseVisualStyleBackColor = true;
             this.buildButton.Click += new System.EventHandler(this.BuildButton_Click);
@@ -167,7 +167,7 @@
             this.clearEditLinesButton.Location = new System.Drawing.Point(102, 253);
             this.clearEditLinesButton.Name = "clearEditLinesButton";
             this.clearEditLinesButton.Size = new System.Drawing.Size(105, 23);
-            this.clearEditLinesButton.TabIndex = 10;
+            this.clearEditLinesButton.TabIndex = 8;
             this.clearEditLinesButton.Text = "Clear edit lines";
             this.clearEditLinesButton.UseVisualStyleBackColor = true;
             this.clearEditLinesButton.Click += new System.EventHandler(this.ClearEditLinesButton_Click);
@@ -186,7 +186,7 @@
             this.HandleDiameterTextBox.Location = new System.Drawing.Point(102, 196);
             this.HandleDiameterTextBox.Name = "HandleDiameterTextBox";
             this.HandleDiameterTextBox.Size = new System.Drawing.Size(105, 20);
-            this.HandleDiameterTextBox.TabIndex = 7;
+            this.HandleDiameterTextBox.TabIndex = 5;
             this.HandleDiameterTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // label8
@@ -214,7 +214,7 @@
             this.TESTBUTTON.Location = new System.Drawing.Point(61, 313);
             this.TESTBUTTON.Name = "TESTBUTTON";
             this.TESTBUTTON.Size = new System.Drawing.Size(75, 23);
-            this.TESTBUTTON.TabIndex = 20;
+            this.TESTBUTTON.TabIndex = 10;
             this.TESTBUTTON.Text = "TEST";
             this.TESTBUTTON.UseVisualStyleBackColor = true;
             this.TESTBUTTON.Click += new System.EventHandler(this.TESTBUTTON_Click);

@@ -1,16 +1,14 @@
-﻿using System.Runtime.Remoting.Messaging;
-
-namespace Hammer.MODEL.Models
+﻿namespace Hammer.MODEL.Models
 {
     public class HammerParameters
     {
         /// <summary>
-        /// Переменная HeadParameters
+        /// Свойства HeadParameters
         /// </summary>
         public HeadParameters HeadParameters { get; set; }
 
         /// <summary>
-        /// Переменная HandleParameters
+        /// Свойства HandleParameters
         /// </summary>
         public HandleParameters HandleParameters { get; set; }
 

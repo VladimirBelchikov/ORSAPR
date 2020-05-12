@@ -68,11 +68,11 @@ namespace Hammer.MODEL
         /// <summary>
         /// Метод отрисовки углового прямоугольника
         /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        public void DrawingCornerRectangle(double x, double y)
+        /// <param name="x2"></param>
+        /// <param name="y2"></param>
+        public void DrawingCornerRectangle(double x2, double y2)
         {
-            _model.SketchManager.CreateCornerRectangle(0, 0, 0, x, y, 0);
+            _model.SketchManager.CreateCornerRectangle(0, 0, 0, x2, y2, 0);
         }
 
         /// <summary>

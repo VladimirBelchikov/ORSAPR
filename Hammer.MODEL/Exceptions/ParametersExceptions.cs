@@ -12,6 +12,5 @@ namespace Hammer.MODEL.Exceptions
             : base(message)
         {
         }
-
     }
 }

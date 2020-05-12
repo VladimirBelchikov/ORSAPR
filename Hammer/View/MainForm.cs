@@ -29,18 +29,19 @@ namespace Hammer
         {
             try
             {
-                _hammerParameters.HandleParameters.Length = double.Parse(HandleLengthTextBox.Text);
-                _hammerParameters.HandleParameters.Diameter = double.Parse(HandleDiameterTextBox.Text);
-                _hammerParameters.HeadParameters.Length = double.Parse(HeadLengthTextBox.Text);
                 _hammerParameters.HeadParameters.Width = double.Parse(HeadWidthTextBox.Text);
-                _hammerParameters.HeadParameters.TipWidth = double.Parse(TipWidthTextBox.Text);
-                _hammerParameters.HeadParameters.ToeLength = double.Parse(ToeLengthTextBox.Text);
+                _hammerParameters.HeadParameters.Length = double.Parse(HeadLengthTextBox.Text);
                 _hammerParameters.HeadParameters.Height = double.Parse(HeadHeightTextBox.Text);
+                _hammerParameters.HeadParameters.ToeLength = double.Parse(ToeLengthTextBox.Text);
+                _hammerParameters.HeadParameters.TipWidth = double.Parse(TipWidthTextBox.Text);
 
-                var validatorParameters = new ValidatorParameters(_hammerParameters);
+                _hammerParameters.HandleParameters.Diameter = double.Parse(HandleDiameterTextBox.Text);
+                _hammerParameters.HandleParameters.Length = double.Parse(HandleLengthTextBox.Text);
+
+                var validatorParameters = new ParametersValidator(_hammerParameters);
 
                 validatorParameters.CheckHeadParameters();
-                validatorParameters.CheckParametersHandle();
+                validatorParameters.CheckHandleParameters();
 
                 _hammerBuilder.CreateHammer();
             }
@@ -86,8 +87,8 @@ namespace Hammer
         {
             _hammerBuilder.OpenSolidWorks();
         }
-
-        // ТЕСТОВАЯ КНОПКА, УДАЛИТЬ!
+        
+        // ТЕСТОВАЯ КНОПКА, УДАЛЮ НА РЕЛИЗЕ!
         private void TESTBUTTON_Click(object sender, EventArgs e)
         {
             HeadLengthTextBox.Text = "60";

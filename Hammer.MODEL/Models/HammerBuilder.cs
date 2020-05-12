@@ -7,7 +7,6 @@ namespace Hammer.MODEL
     {
         private readonly HammerParameters _hammerParameters;
         private readonly SolidWorksApi _solidWorksApi;
-
         private readonly object _solidWorks;
 
         /// <summary>
@@ -18,8 +17,8 @@ namespace Hammer.MODEL
         {
             _hammerParameters = hammerParameters;
 
-            _solidWorksApi = new SolidWorksApi();
-
+            _solidWorksApi = new SolidWorksApi(); 
+            
             _solidWorks = _solidWorksApi.IsThereSolidWorks();
         }
 
