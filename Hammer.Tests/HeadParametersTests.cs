@@ -6,6 +6,9 @@ namespace Hammer.Tests
     [TestFixture]
     public class HeadParametersTests
     {
+
+
+        // НЕ УСПЕЛ НАПИСАТЬ ВСЕ ТЕСТЫ. ДОПИШУ ЧЕРЕЗ НЕСКОЛЬКО ЧАСОВ. ПРОВЕРЬТЕ, ПОЖАЛУЙСТА, ОСТАЛЬНУЮ ЧАСТЬ + ПС + ПЗ.
         //[Test(Description = "Негативный тест HeadLength")]
         //public void SetHeadLength_NegativeTest(double headLength)
         //{
