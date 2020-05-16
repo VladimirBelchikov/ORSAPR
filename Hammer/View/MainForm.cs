@@ -13,7 +13,7 @@ namespace Hammer
     {
         private readonly HammerParameters _hammerParameters;
         private readonly HammerBuilder _hammerBuilder;
-        
+
 
         public MainForm()
         {
@@ -37,15 +37,12 @@ namespace Hammer
                 _hammerParameters.HeadParameters.Height = double.Parse(HeadHeightTextBox.Text);
                 _hammerParameters.HeadParameters.ToeLength = double.Parse(ToeLengthTextBox.Text);
                 _hammerParameters.HeadParameters.TipWidth = double.Parse(TipWidthTextBox.Text);
-
                 _hammerParameters.HandleParameters.Diameter = double.Parse(HandleDiameterTextBox.Text);
                 _hammerParameters.HandleParameters.Length = double.Parse(HandleLengthTextBox.Text);
 
                 var validatorParameters = new ParametersValidator(_hammerParameters);
-
-                validatorParameters.CheckHeadParameters();
-                validatorParameters.CheckHandleParameters();
-
+                validatorParameters.CheckParameters();
+                
                 if (HeadCheckBox.Checked)
                 {
                     _hammerBuilder.CreateHammerWithPeenHead();
@@ -55,9 +52,10 @@ namespace Hammer
                     _hammerBuilder.CreateHammerWithToeHead();
                 }
             }
-            catch (ParametersExceptions exception)
+            catch(ArgumentException message)
             {
-                MessageBox.Show(exception.Message);
+                MessageBox.Show(message.Message, "OutOfRange", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //  MessageBox.Show(_parametersValidator.ExceptionMessage, "OutOfRange", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -97,22 +95,15 @@ namespace Hammer
         {
             _hammerBuilder.OpenSolidWorks();
         }
-        
-        // ТЕСТОВАЯ КНОПКА, УДАЛЮ НА РЕЛИЗЕ!
-        private void TESTBUTTON_Click(object sender, EventArgs e)
-        {
-            HeadLengthTextBox.Text = "60";
-            HeadWidthTextBox.Text = "30";
-            HeadHeightTextBox.Text = "30";
-            TipWidthTextBox.Text = "2";
-            ToeLengthTextBox.Text = "50";
-            HandleLengthTextBox.Text = "130";
-            HandleDiameterTextBox.Text = "20";
-        }
 
+        /// <summary>
+        /// Проверка чекбокса
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void HeadCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            
+
             if (HeadCheckBox.Checked)
             {
                 _hammerParameters.Denominator = 2;
@@ -126,5 +117,20 @@ namespace Hammer
                 TipWidthTextBox.Enabled = true;
             }
         }
+
+
+        // ТЕСТОВАЯ КНОПКА, УДАЛЮ НА РЕЛИЗЕ!
+        private void TESTBUTTON_Click(object sender, EventArgs e)
+        {
+            HeadLengthTextBox.Text = "60";
+            HeadWidthTextBox.Text = "30";
+            HeadHeightTextBox.Text = "30";
+            TipWidthTextBox.Text = "2";
+            ToeLengthTextBox.Text = "50";
+            HandleLengthTextBox.Text = "130";
+            HandleDiameterTextBox.Text = "20";
+        }
+
+
     }
 }

@@ -7,14 +7,14 @@ namespace Hammer.Tests
     [TestFixture]
     public class HeadParametersTests
     {
-        private ValidatorParameters _validatorParameters;
+        private ParametersValidator _parametersValidator;
 
         [Test]
         public void CheckParametersHandle_HandleParametersLengthAndHandleParametersDiameterCorrectVaue()
         {
-            _validatorParameters = new ValidatorParameters(GetCorrectParametersHandle());
+            _parametersValidator = new ParametersValidator(GetCorrectParametersHandle());
 
-            Assert.DoesNotThrow(_validatorParameters.CheckParametersHandle);
+            Assert.DoesNotThrow(_parametersValidator.CheckValueRagne());
         }
 
         [Test]
@@ -24,9 +24,9 @@ namespace Hammer.Tests
 
             parameters.HandleParameters.Length = null;
 
-            _validatorParameters = new ValidatorParameters();
+            _parametersValidator = new ValidatorParameters();
 
-            Assert.DoesNotThrow(_validatorParameters.CheckParametersHandle);
+            Assert.DoesNotThrow(_parametersValidator.CheckParametersHandle);
         }
 
         private HammerParameters GetCorrectParametersHandle() => new HammerParameters
