@@ -1,5 +1,4 @@
 ﻿using System;
-using Hammer.MODEL.Exceptions;
 using Hammer.MODEL.Models;
 
 namespace Hammer.MODEL

@@ -1,6 +1,4 @@
-﻿using System;
-using Hammer.MODEL;
-using Hammer.MODEL.Models;
+﻿using Hammer.MODEL.Models;
 using NUnit.Framework;
 
 namespace Hammer.Tests

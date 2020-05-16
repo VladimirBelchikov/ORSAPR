@@ -83,7 +83,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exceptions\ParametersExceptions.cs" />
     <Compile Include="Models\HammerBuilder.cs" />
     <Compile Include="Models\HammerParameters.cs" />
     <Compile Include="Models\HandleParameters.cs" />
