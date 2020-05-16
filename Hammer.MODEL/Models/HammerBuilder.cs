@@ -25,7 +25,7 @@ namespace Hammer.MODEL
         /// <summary>
         /// Создание пустого файла в SolidWorks
         /// </summary>
-        public void CreateFile()
+        private void CreateFile()
         {
             _solidWorksApi.CreateSolidWorksFile();
         }
