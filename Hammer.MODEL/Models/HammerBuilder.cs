@@ -23,6 +23,14 @@ namespace Hammer.MODEL
         }
 
         /// <summary>
+        /// Создание пустого файла в SolidWorks
+        /// </summary>
+        public void CreateFile()
+        {
+            _solidWorksApi.CreateSolidWorksFile();
+        }
+
+        /// <summary>
         /// Открытие SolidWorks
         /// </summary>
         public void OpenSolidWorks()
@@ -33,19 +41,45 @@ namespace Hammer.MODEL
         /// <summary>
         /// Метод для создания молотка
         /// </summary>
-        public void CreateHammer()
+        public void CreateHammerWithToeHead()
         {
-            _solidWorksApi.CreateSolidWorksFile();
-
-            CreateHead();
+            CreateFile();
+            CreateHeadWithToe();
             CreateHandle();
+        }
+
+        /// <summary>
+        /// Метод для создания молотка с наконечник на оголовье
+        /// </summary>
+        public void CreateHammerWithPeenHead()
+        {
+            CreateFile();
+            CreateHeadWithPeen();
+            CreateHandle();
+        }
+        
+        /// <summary>
+        /// Метод для создания молотка с двусторонним бойком
+        /// </summary>
+        private void CreateHeadWithPeen()
+        { 
+
+            PlaneSelection(PlaneView.FrontAxisName);
+
+            _solidWorksApi.DrawingCornerRectangle(_hammerParameters.HeadParameters.Height, _hammerParameters.HeadParameters.Width);
+            _solidWorksApi.FigureElongationBySketch(_hammerParameters.HeadParameters.Length);
+
+            //_solidWorksApi.DrawingCornerRectangle(_hammerParameters.HeadParameters.Height, _hammerParameters.HeadParameters.Width);
+            //_solidWorksApi.FigureElongationBySketch(_hammerParameters.HeadParameters.Length * -1);
+            
         }
 
         /// <summary>
         /// Метод для создания оголовья
         /// </summary>
-        private void CreateHead()
+        private void CreateHeadWithToe()
         {
+            
             // Отрисовка наконечника
             PlaneSelection(PlaneView.TopAxisName);
 
@@ -61,18 +95,22 @@ namespace Hammer.MODEL
             _solidWorksApi.DrawingCornerRectangle(_hammerParameters.HeadParameters.Height, _hammerParameters.HeadParameters.Width);
             _solidWorksApi.FigureElongationBySketch(_hammerParameters.HeadParameters.Length);
 
-
             // Вырез под рукоять
             PlaneSelection(PlaneView.RightAxisName);
-            
-            if (_hammerParameters.HandleParameters.Diameter > 24)
-            {
-                _solidWorksApi.DrawingCircleByRadius(-16, _hammerParameters.HeadParameters.Width / 2, 0, _hammerParameters.HandleParameters.Diameter / 2);
-            }
-            else
-            {
-                _solidWorksApi.DrawingCircleByRadius(-12, _hammerParameters.HeadParameters.Width / 2, 0, _hammerParameters.HandleParameters.Diameter / 2);
-            }
+
+            _solidWorksApi.DrawingCircleByRadius(
+                -1 * (_hammerParameters.HeadParameters.Length) / _hammerParameters.Denominator,
+                _hammerParameters.HeadParameters.Width / 2, 0, _hammerParameters.HandleParameters.Diameter / 2);
+
+
+            //if (_hammerParameters.HandleParameters.Diameter > 24)
+            //{
+            //    _solidWorksApi.DrawingCircleByRadius(-16, _hammerParameters.HeadParameters.Width / 2, 0, _hammerParameters.HandleParameters.Diameter / 2);
+            //}
+            //else
+            //{
+            //    _solidWorksApi.DrawingCircleByRadius(-12, _hammerParameters.HeadParameters.Width / 2, 0, _hammerParameters.HandleParameters.Diameter / 2);
+            //}
             _solidWorksApi.FigureCutBySketch(_hammerParameters.HeadParameters.Width);
             _solidWorksApi.SketchSelection();
             _solidWorksApi.RemoveAllocations();
@@ -85,14 +123,19 @@ namespace Hammer.MODEL
         {
             PlaneSelection(PlaneView.RightAxisName);
 
-            if (_hammerParameters.HandleParameters.Diameter > 24)
-            {
-                _solidWorksApi.DrawingCircleByRadius(-16, _hammerParameters.HeadParameters.Width / 2, 0, _hammerParameters.HandleParameters.Diameter / 2);
-            }
-            else
-            {
-                _solidWorksApi.DrawingCircleByRadius(-12, _hammerParameters.HeadParameters.Width / 2, 0, _hammerParameters.HandleParameters.Diameter / 2);
-            }
+            _solidWorksApi.DrawingCircleByRadius(
+                -1 * (_hammerParameters.HeadParameters.Length) / _hammerParameters.Denominator,
+                _hammerParameters.HeadParameters.Width / 2, 0, _hammerParameters.HandleParameters.Diameter / 2);
+
+
+            //if (_hammerParameters.HandleParameters.Diameter > 24)
+            //{
+            //    _solidWorksApi.DrawingCircleByRadius(-16, _hammerParameters.HeadParameters.Width / 2, 0, _hammerParameters.HandleParameters.Diameter / 2);
+            //}
+            //else
+            //{
+            //    _solidWorksApi.DrawingCircleByRadius(-12, _hammerParameters.HeadParameters.Width / 2, 0, _hammerParameters.HandleParameters.Diameter / 2);
+            //}
 
             _solidWorksApi.FigureElongationBySketch(_hammerParameters.HandleParameters.Length);
         }

@@ -35,6 +35,7 @@ namespace Hammer.MODEL
             {
                 throw new ParametersExceptions("Длина бойка не может пустой");
             }
+            
             if (_hammerParameters.HeadParameters.Length < 30 || _hammerParameters.HeadParameters.Length > 80)
             {
                 throw new ParametersExceptions("Длина бойка не может быть менее 30мм или более 80мм");
@@ -83,16 +84,16 @@ namespace Hammer.MODEL
             }
             if (_hammerParameters.HandleParameters.Diameter >= _hammerParameters.HeadParameters.Width)
             {
-                throw new ParametersExceptions("Ширина рукояти не может больше или равна ширины бойка");
+                throw new ParametersExceptions("Ширина рукояти не может больше или равна ширине бойка");
             }
 
             if (string.IsNullOrEmpty(_hammerParameters.HandleParameters.Length.ToString()))
             {
                 throw new ParametersExceptions("Длина рукояти не может пустой");
             }
-            if (_hammerParameters.HandleParameters.Length < 130 || _hammerParameters.HandleParameters.Length > 280)
+            if (_hammerParameters.HandleParameters.Length < 80 || _hammerParameters.HandleParameters.Length > 200)
             {
-                throw new ParametersExceptions("Длина рукояти не может быть менее 130мм или более 280мм");
+                throw new ParametersExceptions("Длина рукояти не может быть менее 80мм или более 200мм");
             }
         }
     }

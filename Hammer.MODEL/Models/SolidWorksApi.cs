@@ -12,6 +12,21 @@ namespace Hammer.MODEL
 
         private const string SelectionAxisType = "PLANE";
 
+
+        /// <summary>
+        /// Я не знаю, что именно делают эти "магические числа", но если что-то из этого поменять, то Солид не будет строить деталь.
+        /// http://help.solidworks.com/2016/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2~FeatureCut.html
+        /// https://help.solidworks.com/2017/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.ipartdoc~featureextrusion2.html
+        /// Ссылки на документацию к API, даже в них нет пояснений параметрам!
+        /// НЕ ТРОГАТЬ!!!!!!!
+        /// </summary>
+        private const double Dang = 1.74532925199433E-02;
+        private const int T = 0;
+        private const double D2 = 0.01;
+        private const int StartOffSet = 0;
+
+
+
         /// <summary>
         /// Инициализация SolidWorks
         /// </summary>
@@ -138,8 +153,8 @@ namespace Hammer.MODEL
         /// <param name="height"></param>
         public void FigureCutBySketch(double length)
         {
-            _model.FeatureManager.FeatureCut(true, false, true, 0, 0, length, 0.01, false, false, false, false,
-                1.74532925199433E-02, 1.74532925199433E-02, false, false, false, false, 
+            _model.FeatureManager.FeatureCut(true, false, true, T, T, length, D2, false, false, false, false,
+                Dang, Dang, false, false, false, false, 
                 false, true, true);
         }
 
@@ -149,9 +164,9 @@ namespace Hammer.MODEL
         /// <param name="height"></param>
         public void FigureElongationBySketch(double length)
         {
-            _model.FeatureManager.FeatureExtrusion2(true, false, false, 0, 0, length, 0.01, false, false, false, false,
-               1.74532925199433E-02, 1.74532925199433E-02, false, false, false, false, true,
-               true, true, 0, 0, false);
+            _model.FeatureManager.FeatureExtrusion2(true, false, false, T, T, length, D2, false, false, false, false,
+               Dang, Dang, false, false, false, false, true,
+               true, true, T, StartOffSet, false);
         }
 
     }

@@ -1,19 +1,16 @@
 ﻿using System;
-using System.Reflection;
-using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 using Hammer.MODEL;
 using Hammer.MODEL.Exceptions;
 using Hammer.MODEL.Models;
 
 
-namespace Hammer
+namespace HammerView
 {
     public partial class MainForm : Form
     {
         private readonly HammerParameters _hammerParameters;
         private readonly HammerBuilder _hammerBuilder;
-        
 
         public MainForm()
         {
@@ -46,14 +43,7 @@ namespace Hammer
                 validatorParameters.CheckHeadParameters();
                 validatorParameters.CheckHandleParameters();
 
-                if (HeadCheckBox.Checked)
-                {
-                    _hammerBuilder.CreateHammerWithPeenHead();
-                }
-                else
-                {
-                    _hammerBuilder.CreateHammerWithToeHead();
-                }
+                _hammerBuilder.CreateHammer();
             }
             catch (ParametersExceptions exception)
             {
@@ -97,7 +87,7 @@ namespace Hammer
         {
             _hammerBuilder.OpenSolidWorks();
         }
-        
+
         // ТЕСТОВАЯ КНОПКА, УДАЛЮ НА РЕЛИЗЕ!
         private void TESTBUTTON_Click(object sender, EventArgs e)
         {
@@ -110,21 +100,6 @@ namespace Hammer
             HandleDiameterTextBox.Text = "20";
         }
 
-        private void HeadCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            
-            if (HeadCheckBox.Checked)
-            {
-                _hammerParameters.Denominator = 2;
-                ToeLengthTextBox.Enabled = false;
-                TipWidthTextBox.Enabled = false;
-            }
-            else
-            {
-                _hammerParameters.Denominator = 4;
-                ToeLengthTextBox.Enabled = true;
-                TipWidthTextBox.Enabled = true;
-            }
-        }
+
     }
 }
