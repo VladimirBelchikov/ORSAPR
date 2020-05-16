@@ -23,7 +23,7 @@ namespace Hammer.MODEL
         /// <param name="min"></param>
         /// <param name="max"></param>
         /// <param name="paramName"></param>
-        public void CheckValueRagne(double parameter, double min, double max, string paramName)
+        private void CheckValueRagne(double parameter, double min, double max, string paramName)
         {
             if (parameter < min || parameter > max)
             {
