@@ -1,7 +1,6 @@
 ﻿using System;
-using Hammer.MODEL.Models;
 
-namespace Hammer.MODEL
+namespace Hammer.MODEL.Parameters
 {
     public class ParametersValidator
     {

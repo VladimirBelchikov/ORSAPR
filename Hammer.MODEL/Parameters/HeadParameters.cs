@@ -1,4 +1,4 @@
-﻿namespace Hammer.MODEL.Models
+﻿namespace Hammer.MODEL.Parameters
 {
     public class HeadParameters
     {

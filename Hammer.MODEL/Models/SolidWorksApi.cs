@@ -2,7 +2,7 @@
 using Hammer.MODEL.Enum;
 using SolidWorks.Interop.sldworks;
 
-namespace Hammer.MODEL
+namespace Hammer.MODEL.Models
 {
     public class SolidWorksApi
     {

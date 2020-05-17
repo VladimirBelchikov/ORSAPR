@@ -1,82 +1,148 @@
-﻿using Hammer.MODEL.Models;
+﻿using System;
+using Hammer.MODEL.Parameters;
 using NUnit.Framework;
 
 namespace Hammer.Tests
 {
     [TestFixture]
-    public class HeadParametersTests
+    public class HammerParametersTests
     {
-
-        //    Я не могу понять, как написать тесты на негативные параметры, если их проверка происходит только при нажатии кнопки "Build" в MainForm
-        //    А валидация вынесена отдельным классом.
-
-        //[Test]
-        //[TestCase(10, TestName = "Негативный тест длины оголовья")]
-        //[TestCase(90, TestName = "Негативный тест длины оголовья")]
-        //public void SetHeadLength_NegativeTest(double headLength)
-        //{
-        //    var headParameters = new HeadParameters();
-
-
-
-        //    Assert.Throws<ArgumentException>(() => headParameters.Length = headLength);
-        //}
+        private const string ExceptionMessageHeadParametersWidth = "Поле ширины оголовья должно быть в пределах от 20мм до 50мм.";
+        private const string ExceptionMessageHeadParametersLength = "Поле длины бойка должно быть в пределах от 30мм до 80мм.";
+        private const string ExceptionMessageHeadParametersHeight = "Поле высоты бойка должно быть в пределах от 20мм до 50мм.";
+        private const string ExceptionMessageHeadParametersTipWidth = "Поле ширина наконечника должно быть в пределах от 1мм до 10мм.";
+        private const string ExceptionMessageHeadParametersToeLength = "Поле длины наконечника должно быть в пределах от 30мм до 80мм.";
+        private const string ExceptionMessageHandleParametersDiameter = "Поле диаметра рукояти должно быть в пределах от 15мм до 40мм.";
+        private const string ExceptionMessageHandleParametersLength = "Поле длины рукояти должно быть в пределах от 80мм до 200мм.";
 
         [Test]
-        [TestCase(30, TestName = "Позитивный тест установки длины оголовья 30")]
-        [TestCase(70, TestName = "Позитивный тест установки длины огловья 70")]
-        public void SetHeadLength_PositiveTest(double headLength)
+        public void CheckParameters_TrueValuesHammerParameters_DoesNotThrow()
         {
-            new HeadParameters {Length = headLength};
+            var hammerParameters = GetDefaultHammerParameters();
+            var parametersValidator = new ParametersValidator(hammerParameters);
+
+            Assert.DoesNotThrow(() => parametersValidator.CheckParameters());
         }
 
         [Test]
-        [TestCase(30, TestName = "Позитивный тест установки ширины оголовья 30")]
-        [TestCase(50, TestName = "Позитивный тест установки ширины огловья 50")]
-        public void SetHeadWidth_PositiveTest(double headWidth)
+        [TestCase(10, TestName = "Поле ширины оголовья меньше нормы")]
+        [TestCase(60, TestName = "Поле ширины оголовья больше нормы")]
+        public void CheckParameters_FalseValueHeadParametersWidth_ThrowsArgumentException(double headParametersWidth)
         {
-            new HeadParameters {Width = headWidth};
+            var hammerParameters = GetDefaultHammerParameters();
+            hammerParameters.HeadParameters.Width = headParametersWidth;
+            var parametersValidator = new ParametersValidator(hammerParameters);
+
+            Assert.That(
+                Assert.Throws<ArgumentException>(() => parametersValidator.CheckParameters()).Message,
+                Is.EqualTo(ExceptionMessageHeadParametersWidth));
+        }
+
+
+
+        [Test]
+        [TestCase(20, TestName = "Поле длины оголовья меньше нормы")]
+        [TestCase(90, TestName = "Поле длины оголовья больше нормы")]
+        public void CheckParameters_FalseValueHeadParametersLength_ThrowsArgumentException(double headParametersLength)
+        {
+            var hammerParameters = GetDefaultHammerParameters();
+            hammerParameters.HeadParameters.Length = headParametersLength;
+            var parametersValidator = new ParametersValidator(hammerParameters);
+
+            Assert.That(
+                Assert.Throws<ArgumentException>(() => parametersValidator.CheckParameters()).Message,
+                Is.EqualTo(ExceptionMessageHeadParametersLength));
         }
 
         [Test]
-        [TestCase(25, TestName = "Позитивный тест установки высоты оголовья 25")]
-        [TestCase(45, TestName = "Позитивный тест установки длины огловья 45")]
-        public void SetHeadHeight_PositiveTest(double headHeight)
+        [TestCase(10, TestName = "Поле высоты огловья меньше нормы")]
+        [TestCase(60, TestName = "Поле высоты огловья больше нормы")]
+        public void CheckParameters_FalseValueHeadParametersHeight_ThrowsArgumentException(double headParametersHeight)
         {
-            new HeadParameters {Height = headHeight};
+            var hammerParameters = GetDefaultHammerParameters();
+            hammerParameters.HeadParameters.Height = headParametersHeight;
+            var parametersValidator = new ParametersValidator(hammerParameters);
+
+            Assert.That(
+                Assert.Throws<ArgumentException>(() => parametersValidator.CheckParameters()).Message,
+                Is.EqualTo(ExceptionMessageHeadParametersHeight));
         }
 
         [Test]
-        [TestCase(1, TestName = "Позитивный тест установки ширины наконечника 1")]
-        [TestCase(7, TestName = "Позитивный тест установки ширины наконечника 7")]
-        public void SetTipWidth_PositiveTest(double tipWidth)
+        [TestCase(0, TestName = "Поле ширина наконечника меньше нормы")]
+        [TestCase(15, TestName = "Поле ширина наконечника больше нормы")]
+        public void CheckParameters_FalseValueHeadParametersTipWidth_ThrowsArgumentException(double headParametersTipWidth)
         {
-            new HeadParameters {TipWidth = tipWidth};
+            var hammerParameters = GetDefaultHammerParameters();
+            hammerParameters.HeadParameters.TipWidth = headParametersTipWidth;
+            var parametersValidator = new ParametersValidator(hammerParameters);
+
+            Assert.That(
+                Assert.Throws<ArgumentException>(() => parametersValidator.CheckParameters()).Message,
+                Is.EqualTo(ExceptionMessageHeadParametersTipWidth));
+        }
+
+
+        [Test]
+        [TestCase(20, TestName = "Поле длины наконечника меньше нормы")]
+        [TestCase(90, TestName = "Поле длины наконечника больше нормы")]
+        public void CheckParameters_FalseValueHeadParametersToeLength_ThrowsArgumentException(double headParametersToeLength)
+        {
+            var hammerParameters = GetDefaultHammerParameters();
+            hammerParameters.HeadParameters.ToeLength = headParametersToeLength;
+            var parametersValidator = new ParametersValidator(hammerParameters);
+
+            Assert.That(
+                Assert.Throws<ArgumentException>(() => parametersValidator.CheckParameters()).Message,
+                Is.EqualTo(ExceptionMessageHeadParametersToeLength));
         }
 
         [Test]
-        [TestCase(30, TestName = "Позитивный тест установки длины наконечника 30")]
-        [TestCase(60, TestName = "Позитивный тест установки длины наконечника 60")]
-        public void SetToeLength_PositiveTest(double toeLength)
+        [TestCase(10, TestName = "Поле диаметра рукояти меньше нормы")]
+        [TestCase(50, TestName = "Поле диаметра рукояти больше нормы")]
+        public void CheckParameters_FalseValueHandleParametersDiameter_ThrowsArgumentException(double handleParametersDiameter)
         {
-            new HeadParameters {ToeLength = toeLength};
+            var hammerParameters = GetDefaultHammerParameters();
+            hammerParameters.HandleParameters.Diameter = handleParametersDiameter;
+            var parametersValidator = new ParametersValidator(hammerParameters);
+
+            Assert.That(
+                Assert.Throws<ArgumentException>(() => parametersValidator.CheckParameters()).Message,
+                Is.EqualTo(ExceptionMessageHandleParametersDiameter));
         }
 
         [Test]
-        [TestCase(20, TestName = "Позитивный тест установки диаметра рукояти 20")]
-        [TestCase(30, TestName = "Позитивный тест установки длины огловья 30")]
-        public void SetHandleDiameter_PositiveTest(double handleDiameter)
+        [TestCase(70, TestName = "Поле длины рукояти меньше нормы")]
+        [TestCase(210, TestName = "Поле длины рукояти больше нормы")]
+        public void CheckParameters_FalseValueHandleParametersLength_ThrowsArgumentException(double handleParametersLength)
         {
-            new HandleParameters {Diameter = handleDiameter};
+            var hammerParameters = GetDefaultHammerParameters();
+            hammerParameters.HandleParameters.Length = handleParametersLength;
+            var parametersValidator = new ParametersValidator(hammerParameters);
+
+            Assert.That(
+                Assert.Throws<ArgumentException>(() => parametersValidator.CheckParameters()).Message,
+                Is.EqualTo(ExceptionMessageHandleParametersLength));
         }
 
-        [Test]
-        [TestCase(100, TestName = "Позитивный тест установки длины рукояти 100")]
-        [TestCase(180, TestName = "Позитивный тест установки длины огловья 180")]
-        public void SetHandleLength_PositiveTest(double handleLength)
-        {
-            new HandleParameters {Length = handleLength};
-        }
+        private HammerParameters GetDefaultHammerParameters() =>
+            new HammerParameters
+            {
+                Denominator = 1,
+                HeadParameters = new HeadParameters
+                {
+                    Height = 30,
+                    Length = 50,
+                    Width = 30,
+                    TipWidth = 5,
+                    ToeLength = 50
+                },
 
+                HandleParameters = new HandleParameters
+                {
+                    Diameter = 25,
+                    Length = 150
+                }
+            };
     }
 }

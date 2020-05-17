@@ -1,7 +1,7 @@
 ﻿using Hammer.MODEL.Enum;
-using Hammer.MODEL.Models;
+using Hammer.MODEL.Parameters;
 
-namespace Hammer.MODEL
+namespace Hammer.MODEL.Models
 {
     public class HammerBuilder
     {

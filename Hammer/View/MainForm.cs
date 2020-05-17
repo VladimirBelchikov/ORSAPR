@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
-using Hammer.MODEL;
 using Hammer.MODEL.Models;
+using Hammer.MODEL.Parameters;
 
 
 namespace Hammer
