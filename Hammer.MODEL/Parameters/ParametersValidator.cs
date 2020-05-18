@@ -26,7 +26,7 @@ namespace Hammer.MODEL.Parameters
         {
             if (parameter < min || parameter > max)
             {
-                string message = paramName + " должно быть в пределах от " + min + "мм до " + max + "мм.";
+                string message = paramName + " must be in a range from " + min + "mm up to " + max + "mm.";
                 throw new ArgumentException(message);
             }
         }
@@ -36,19 +36,19 @@ namespace Hammer.MODEL.Parameters
         /// </summary>
         public void CheckParameters()
         {
-            CheckValueRange(_hammerParameters.HeadParameters.Width, 20, 50, "Поле ширины оголовья");
+            CheckValueRange(_hammerParameters.HeadParameters.Width, 20, 50, "Head width");
 
-            CheckValueRange(_hammerParameters.HeadParameters.Length, 30, 80, "Поле длины бойка");
+            CheckValueRange(_hammerParameters.HeadParameters.Length, 30, 80, "Head length");
 
-            CheckValueRange(_hammerParameters.HeadParameters.Height, 20, 50, "Поле высоты бойка");
+            CheckValueRange(_hammerParameters.HeadParameters.Height, 20, 50, "Head height");
 
-            CheckValueRange(_hammerParameters.HeadParameters.TipWidth, 1, 10, "Поле ширина наконечника");
+            CheckValueRange(_hammerParameters.HeadParameters.ToeLength, 30, 80, "Toe length");
 
-            CheckValueRange(_hammerParameters.HeadParameters.ToeLength, 30, 80, "Поле длины наконечника");
+            CheckValueRange(_hammerParameters.HeadParameters.TipWidth, 1, 10, "Tip width");
 
-            CheckValueRange(_hammerParameters.HandleParameters.Diameter, 15, 40, "Поле диаметра рукояти");
+            CheckValueRange(_hammerParameters.HandleParameters.Diameter, 15, 40, "Handle diameter");
 
-            CheckValueRange(_hammerParameters.HandleParameters.Length, 80, 200, "Поле длины рукояти");
+            CheckValueRange(_hammerParameters.HandleParameters.Length, 80, 200, "Handle length");
         }
     }
 }

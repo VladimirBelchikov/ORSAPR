@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Hammer.Properties {
+namespace Hammer.View.Properties {
     using System;
     
     

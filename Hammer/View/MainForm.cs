@@ -4,7 +4,7 @@ using Hammer.MODEL.Models;
 using Hammer.MODEL.Parameters;
 
 
-namespace Hammer
+namespace Hammer.View
 {
     public partial class MainForm : Form
     {
@@ -51,7 +51,7 @@ namespace Hammer
             }
             catch(ArgumentException message)
             {
-                MessageBox.Show(message.Message, "OutOfRange", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(message.Message, "Out of range exception", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //  MessageBox.Show(_parametersValidator.ExceptionMessage, "OutOfRange", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -116,8 +116,12 @@ namespace Hammer
         }
 
 
-        // ТЕСТОВАЯ КНОПКА, УДАЛЮ НА РЕЛИЗЕ!
-        private void TESTBUTTON_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Кнопка для ввода параметров по умолчанию
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DefaultParametersButton_Click(object sender, EventArgs e)
         {
             HeadLengthTextBox.Text = "60";
             HeadWidthTextBox.Text = "30";

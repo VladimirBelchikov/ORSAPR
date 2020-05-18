@@ -1,4 +1,4 @@
-﻿namespace Hammer
+﻿namespace Hammer.View
 {
     partial class MainForm
     {
@@ -202,9 +202,9 @@
             // 
             // startSolidWorksButton
             // 
-            this.startSolidWorksButton.Location = new System.Drawing.Point(33, 304);
+            this.startSolidWorksButton.Location = new System.Drawing.Point(15, 304);
             this.startSolidWorksButton.Name = "startSolidWorksButton";
-            this.startSolidWorksButton.Size = new System.Drawing.Size(149, 23);
+            this.startSolidWorksButton.Size = new System.Drawing.Size(192, 23);
             this.startSolidWorksButton.TabIndex = 9;
             this.startSolidWorksButton.Text = "Start SolidWorks";
             this.startSolidWorksButton.UseVisualStyleBackColor = true;
@@ -212,13 +212,13 @@
             // 
             // TESTBUTTON
             // 
-            this.TESTBUTTON.Location = new System.Drawing.Point(61, 335);
+            this.TESTBUTTON.Location = new System.Drawing.Point(15, 333);
             this.TESTBUTTON.Name = "TESTBUTTON";
-            this.TESTBUTTON.Size = new System.Drawing.Size(75, 23);
+            this.TESTBUTTON.Size = new System.Drawing.Size(192, 23);
             this.TESTBUTTON.TabIndex = 10;
-            this.TESTBUTTON.Text = "TEST";
+            this.TESTBUTTON.Text = "Default parameters";
             this.TESTBUTTON.UseVisualStyleBackColor = true;
-            this.TESTBUTTON.Click += new System.EventHandler(this.TESTBUTTON_Click);
+            this.TESTBUTTON.Click += new System.EventHandler(this.DefaultParametersButton_Click);
             // 
             // label5
             // 
@@ -235,9 +235,9 @@
             this.HeadCheckBox.AutoSize = true;
             this.HeadCheckBox.Location = new System.Drawing.Point(15, 108);
             this.HeadCheckBox.Name = "HeadCheckBox";
-            this.HeadCheckBox.Size = new System.Drawing.Size(174, 17);
+            this.HeadCheckBox.Size = new System.Drawing.Size(127, 17);
             this.HeadCheckBox.TabIndex = 22;
-            this.HeadCheckBox.Text = "Оголовье с двойным бойком";
+            this.HeadCheckBox.Text = "Double hammer head";
             this.HeadCheckBox.UseVisualStyleBackColor = true;
             this.HeadCheckBox.CheckedChanged += new System.EventHandler(this.HeadCheckBox_CheckedChanged);
             // 
@@ -245,7 +245,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(221, 396);
+            this.ClientSize = new System.Drawing.Size(218, 363);
             this.Controls.Add(this.HeadCheckBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.TESTBUTTON);

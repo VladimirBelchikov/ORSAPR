@@ -1,6 +1,9 @@
 ﻿using System;
-using Hammer.MODEL.Enum;
+
 using SolidWorks.Interop.sldworks;
+
+using Hammer.MODEL.Enum;
+
 
 namespace Hammer.MODEL.Models
 {
@@ -17,7 +20,7 @@ namespace Hammer.MODEL.Models
         /// Я не знаю, что именно делают эти "магические числа", но если что-то из этого поменять, то Солид не будет строить деталь.
         /// http://help.solidworks.com/2016/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2~FeatureCut.html
         /// https://help.solidworks.com/2017/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.ipartdoc~featureextrusion2.html
-        /// Ссылки на документацию к API, даже в них нет пояснений параметрам!
+        /// Ссылки на документацию к методам API, даже в них нет пояснений параметрам!
         /// НЕ ТРОГАТЬ!!!!!!!
         /// </summary>
         private const double Dang = 1.74532925199433E-02;
