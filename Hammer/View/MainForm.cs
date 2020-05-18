@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+
 using Hammer.MODEL.Models;
 using Hammer.MODEL.Parameters;
 
@@ -41,18 +42,14 @@ namespace Hammer.View
                 validatorParameters.CheckParameters();
                 
                 if (HeadCheckBox.Checked)
-                {
-                    _hammerBuilder.CreateHammerWithPeenHead();
-                }
+	                _hammerBuilder.CreateHammerWithPeenHead();
                 else
-                {
-                    _hammerBuilder.CreateHammerWithToeHead();
-                }
+	                _hammerBuilder.CreateHammerWithToeHead();
             }
             catch(ArgumentException message)
             {
-                MessageBox.Show(message.Message, "Out of range exception", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //  MessageBox.Show(_parametersValidator.ExceptionMessage, "OutOfRange", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(message.Message, "Out of range exception",
+	                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

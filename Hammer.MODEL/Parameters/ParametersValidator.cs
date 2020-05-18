@@ -22,13 +22,11 @@ namespace Hammer.MODEL.Parameters
         /// <param name="min"></param>
         /// <param name="max"></param>
         /// <param name="paramName"></param>
-        private void CheckValueRange(double parameter, double min, double max, string paramName)
+        private static void CheckValueRange(double parameter, double min, double max, string paramName)
         {
-            if (parameter < min || parameter > max)
-            {
-                string message = paramName + " must be in a range from " + min + "mm up to " + max + "mm.";
-                throw new ArgumentException(message);
-            }
+            if (!(parameter < min) && !(parameter > max)) return;
+            var message = paramName + " must be in a range from " + min + "mm up to " + max + "mm.";
+            throw new ArgumentException(message);
         }
 
         /// <summary>

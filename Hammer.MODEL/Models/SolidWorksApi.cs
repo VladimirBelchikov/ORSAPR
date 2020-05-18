@@ -10,39 +10,30 @@ namespace Hammer.MODEL.Models
     public class SolidWorksApi
     {
         private SldWorks _solidWorks;
-
         private IModelDoc2 _model;
-
         private const string SelectionAxisType = "PLANE";
 
-
-        /// <summary>
-        /// Я не знаю, что именно делают эти "магические числа", но если что-то из этого поменять, то Солид не будет строить деталь.
-        /// http://help.solidworks.com/2016/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2~FeatureCut.html
-        /// https://help.solidworks.com/2017/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.ipartdoc~featureextrusion2.html
-        /// Ссылки на документацию к методам API, даже в них нет пояснений параметрам!
-        /// НЕ ТРОГАТЬ!!!!!!!
-        /// </summary>
+        // Я не знаю, что именно делают эти "магические числа",
+        // но если что-то из этого поменять, то Солид не будет строить деталь.
+        // http://help.solidworks.com/2016/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2~FeatureCut.html
+        // https://help.solidworks.com/2017/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.ipartdoc~featureextrusion2.html
+        // Ссылки на документацию к методам API, даже в них нет пояснений параметрам!
+        // НЕ ТРОГАТЬ!!!!!!!
         private const double Dang = 1.74532925199433E-02;
         private const int T = 0;
         private const double D2 = 0.01;
         private const int StartOffSet = 0;
 
-
-
         /// <summary>
         /// Инициализация SolidWorks
         /// </summary>
         /// <returns></returns>
-
         public object IsThereSolidWorks()
         {
             try
             {
-                //Guid guid = new Guid("d134b411-3689-497d-b2d7-a27cb1066648");
-
-
-                object processSolidWorks = System.Activator.CreateInstance(System.Type.GetTypeFromProgID("SldWorks.Application.28"));
+	            var processSolidWorks = System.Activator.CreateInstance
+	                (System.Type.GetTypeFromProgID("SldWorks.Application.28"));
                 return processSolidWorks;
             }
             catch
@@ -78,7 +69,8 @@ namespace Hammer.MODEL.Models
         /// <param name="x2"></param>
         /// <param name="y2"></param>
         /// <param name="z2"></param>
-        public void DrawingLine(double x1, double y1, double z1, double x2, double y2, double z2)
+        public void DrawingLine(double x1, double y1, double z1, double x2,
+	        double y2, double z2)
         {
             _model.SketchManager.CreateLine(x1, y1, z1, x2, y2, z2);
         }
@@ -90,7 +82,8 @@ namespace Hammer.MODEL.Models
         /// <param name="y2"></param>
         public void DrawingCornerRectangle(double x2, double y2)
         {
-            _model.SketchManager.CreateCornerRectangle(0, 0, 0, x2, y2, 0);
+            _model.SketchManager.CreateCornerRectangle(0, 0, 0, x2,
+	            y2, 0);
         }
 
         /// <summary>
@@ -100,9 +93,11 @@ namespace Hammer.MODEL.Models
         /// <param name="y"></param>
         /// <param name="z"></param>
         /// <param name="radius"></param>
-        public void DrawingCircleByRadius(double x, double y, double z, double radius)
+        public void DrawingCircleByRadius(double x, double y, double z,
+	        double radius)
         {
-            _model.SketchManager.CreateCircleByRadius(x, y, z, radius);
+            _model.SketchManager.CreateCircleByRadius(x, y, z,
+	            radius);
         }
 
         /// <summary>
@@ -120,17 +115,20 @@ namespace Hammer.MODEL.Models
         /// <param name="planeView"></param>
         public void LayerSelection(PlaneView planeView)
         {
-            if (planeView == PlaneView.TopAxisName)
+            switch (planeView)
             {
-                _model.Extension.SelectByID2("Сверху", SelectionAxisType, 0, 0, 0, false, 0, null, 0);
-            }
-            if (planeView == PlaneView.FrontAxisName)
-            {
-                _model.Extension.SelectByID2("Спереди", SelectionAxisType, 0, 0, 0, false, 0, null, 0);
-            }
-            if (planeView == PlaneView.RightAxisName)
-            {
-                _model.Extension.SelectByID2("Справа", SelectionAxisType, 0, 0, 0, false, 0, null, 0);
+                case PlaneView.TopAxisName:
+                    _model.Extension.SelectByID2("Сверху", SelectionAxisType,
+	                    0, 0, 0, false, 0, null, 0);
+                    break;
+                case PlaneView.FrontAxisName:
+                    _model.Extension.SelectByID2("Спереди", SelectionAxisType,
+	                    0, 0, 0, false, 0, null, 0);
+                    break;
+                case PlaneView.RightAxisName:
+                    _model.Extension.SelectByID2("Справа", SelectionAxisType,
+	                    0, 0, 0, false, 0, null, 0);
+                    break;
             }
         }
 
@@ -153,23 +151,28 @@ namespace Hammer.MODEL.Models
         /// <summary>
         /// Метод для выреза по параметрам
         /// </summary>
-        /// <param name="height"></param>
+        /// <param name="length"></param>
         public void FigureCutBySketch(double length)
         {
-            _model.FeatureManager.FeatureCut(true, false, true, T, T, length, D2, false, false, false, false,
-                Dang, Dang, false, false, false, false, 
+            _model.FeatureManager.FeatureCut(true, false, true,
+	            T, T, length, D2, false, false, false,
+	            false, Dang, Dang, false,
+	            false, false, false, 
                 false, true, true);
         }
 
         /// <summary>
         /// Метод для вытягивания по параметрам
         /// </summary>
-        /// <param name="height"></param>
+        /// <param name="length"></param>
         public void FigureElongationBySketch(double length)
         {
-            _model.FeatureManager.FeatureExtrusion2(true, false, false, T, T, length, D2, false, false, false, false,
-               Dang, Dang, false, false, false, false, true,
-               true, true, T, StartOffSet, false);
+            _model.FeatureManager.FeatureExtrusion2(true, false,
+	            false, T, T, length, D2, false, false,
+	            false, false, Dang, Dang, false,
+	            false, false, false,
+	            true, true, true, T, StartOffSet,
+	            false);
         }
 
     }
