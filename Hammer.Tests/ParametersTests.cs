@@ -32,7 +32,8 @@ namespace Hammer.Tests
             Assert.That(
                 Assert.Throws<ArgumentException>(() => 
 	                parametersValidator.CheckParameters()).Message,
-                Is.EqualTo("Head width must be in a range from 20mm up to 50mm."));
+                Is.EqualTo(
+	                "Head width must be in a range from 20mm up to 50mm."));
         }
 
 
@@ -50,7 +51,8 @@ namespace Hammer.Tests
             Assert.That(
                 Assert.Throws<ArgumentException>(() => 
 	                parametersValidator.CheckParameters()).Message,
-                Is.EqualTo("Head length must be in a range from 30mm up to 80mm."));
+                Is.EqualTo(
+	                "Head length must be in a range from 30mm up to 80mm."));
         }
 
         [Test]
@@ -66,7 +68,8 @@ namespace Hammer.Tests
             Assert.That(
                 Assert.Throws<ArgumentException>(() => 
 	                parametersValidator.CheckParameters()).Message,
-                Is.EqualTo("Head height must be in a range from 20mm up to 50mm."));
+                Is.EqualTo(
+	                "Head height must be in a range from 20mm up to 50mm."));
         }
 
         [Test]
@@ -82,7 +85,8 @@ namespace Hammer.Tests
             Assert.That(
                 Assert.Throws<ArgumentException>(() => 
 	                parametersValidator.CheckParameters()).Message,
-                Is.EqualTo("Tip width must be in a range from 1mm up to 10mm."));
+                Is.EqualTo(
+	                "Tip width must be in a range from 1mm up to 10mm."));
         }
 
 
@@ -99,7 +103,8 @@ namespace Hammer.Tests
             Assert.That(
                 Assert.Throws<ArgumentException>(() => 
 	                parametersValidator.CheckParameters()).Message,
-                Is.EqualTo("Toe length must be in a range from 30mm up to 80mm."));
+                Is.EqualTo(
+	                "Toe length must be in a range from 30mm up to 80mm."));
         }
 
         [Test]
@@ -115,7 +120,8 @@ namespace Hammer.Tests
             Assert.That(
                 Assert.Throws<ArgumentException>(() => 
 	                parametersValidator.CheckParameters()).Message,
-                Is.EqualTo("Handle diameter must be in a range from 15mm up to 40mm."));
+                Is.EqualTo(
+	                "Handle diameter must be in a range from 15mm up to 40mm."));
         }
 
         [Test]
@@ -131,7 +137,8 @@ namespace Hammer.Tests
             Assert.That(
                 Assert.Throws<ArgumentException>(() => 
 	                parametersValidator.CheckParameters()).Message,
-                Is.EqualTo("Handle length must be in a range from 80mm up to 200mm."));
+                Is.EqualTo(
+	                "Handle length must be in a range from 80mm up to 200mm."));
         }
 
         private HammerParameters GetDefaultHammerParameters() =>

@@ -101,7 +101,8 @@ namespace Hammer.MODEL.Models
             _solidWorksApi.DrawingLine(
 	            (_hammerParameters.HeadParameters.Height / 2)
 	            - (_hammerParameters.HeadParameters.TipWidth / 2),
-                _hammerParameters.HeadParameters.ToeLength, 0, 0, 0, 0);
+                _hammerParameters.HeadParameters.ToeLength, 0,
+	            0, 0, 0);
 
             _solidWorksApi.FigureElongationBySketch(
 	            _hammerParameters.HeadParameters.Width);
@@ -127,7 +128,8 @@ namespace Hammer.MODEL.Models
                 _hammerParameters.HeadParameters.Width / 2,
                 0, _hammerParameters.HandleParameters.Diameter / 2);
 
-            _solidWorksApi.FigureCutBySketch(_hammerParameters.HeadParameters.Width);
+            _solidWorksApi.FigureCutBySketch(
+	            _hammerParameters.HeadParameters.Width);
 
             _solidWorksApi.SketchSelection();
 

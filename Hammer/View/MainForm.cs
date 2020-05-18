@@ -30,15 +30,23 @@ namespace Hammer.View
         {
             try
             {
-                _hammerParameters.HeadParameters.Width = double.Parse(HeadWidthTextBox.Text);
-                _hammerParameters.HeadParameters.Length = double.Parse(HeadLengthTextBox.Text);
-                _hammerParameters.HeadParameters.Height = double.Parse(HeadHeightTextBox.Text);
-                _hammerParameters.HeadParameters.ToeLength = double.Parse(ToeLengthTextBox.Text);
-                _hammerParameters.HeadParameters.TipWidth = double.Parse(TipWidthTextBox.Text);
-                _hammerParameters.HandleParameters.Diameter = double.Parse(HandleDiameterTextBox.Text);
-                _hammerParameters.HandleParameters.Length = double.Parse(HandleLengthTextBox.Text);
+                _hammerParameters.HeadParameters.Width = 
+	                double.Parse(HeadWidthTextBox.Text);
+                _hammerParameters.HeadParameters.Length = 
+	                double.Parse(HeadLengthTextBox.Text);
+                _hammerParameters.HeadParameters.Height = 
+	                double.Parse(HeadHeightTextBox.Text);
+                _hammerParameters.HeadParameters.ToeLength = 
+	                double.Parse(ToeLengthTextBox.Text);
+                _hammerParameters.HeadParameters.TipWidth = 
+	                double.Parse(TipWidthTextBox.Text);
+                _hammerParameters.HandleParameters.Diameter = 
+	                double.Parse(HandleDiameterTextBox.Text);
+                _hammerParameters.HandleParameters.Length = 
+	                double.Parse(HandleLengthTextBox.Text);
 
-                var validatorParameters = new ParametersValidator(_hammerParameters);
+                var validatorParameters = new ParametersValidator(
+	                _hammerParameters);
                 validatorParameters.CheckParameters();
                 
                 if (HeadCheckBox.Checked)
@@ -76,7 +84,8 @@ namespace Hammer.View
         /// <param name="e"></param>
         private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar != 44 && e.KeyChar != 8)
+            if ((e.KeyChar < 48 || e.KeyChar > 57)
+                && e.KeyChar != 44 && e.KeyChar != 8)
                 e.Handled = true;
         }
 
