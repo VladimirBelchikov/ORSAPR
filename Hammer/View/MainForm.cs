@@ -16,10 +16,10 @@ namespace Hammer.View
         public MainForm()
         {
             InitializeComponent();
-
             _hammerParameters = new HammerParameters();
             _hammerBuilder = new HammerBuilder(_hammerParameters);
         }
+
 
         /// <summary>
         /// Кнопка, вызывающая методы построения модели
@@ -28,7 +28,7 @@ namespace Hammer.View
         /// <param name="e"></param>
         private void BuildButton_Click(object sender, EventArgs e)
         {
-            try
+	        try
             {
                 _hammerParameters.HeadParameters.Width = 
 	                double.Parse(HeadWidthTextBox.Text);
@@ -60,6 +60,8 @@ namespace Hammer.View
 	                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+
 
         /// <summary>
         /// Очиста всех TextBox полей

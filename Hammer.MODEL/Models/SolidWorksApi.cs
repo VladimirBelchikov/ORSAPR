@@ -38,7 +38,8 @@ namespace Hammer.MODEL.Models
             }
             catch
             {
-                throw new Exception("SolidWorks 2020 не найден на вашем компьютере");
+                throw new Exception(
+	                "SolidWorks 2020 не найден на вашем компьютере");
             }
         }
 
@@ -154,11 +155,9 @@ namespace Hammer.MODEL.Models
         /// <param name="length"></param>
         public void FigureCutBySketch(double length)
         {
-            _model.FeatureManager.FeatureCut(true, false, true,
-	            T, T, length, D2, false, false, false,
-	            false, Dang, Dang, false,
-	            false, false, false, 
-                false, true, true);
+            _model.FeatureManager.FeatureCut(true, false, true, T, T, length,
+	            D2, false, false, false,false, Dang, Dang, false, false, false,
+	            false, false, true, true);
         }
 
         /// <summary>
@@ -167,13 +166,9 @@ namespace Hammer.MODEL.Models
         /// <param name="length"></param>
         public void FigureElongationBySketch(double length)
         {
-            _model.FeatureManager.FeatureExtrusion2(true, false,
-	            false, T, T, length, D2, false, false,
-	            false, false, Dang, Dang, false,
-	            false, false, false,
-	            true, true, true, T, StartOffSet,
-	            false);
+	        _model.FeatureManager.FeatureExtrusion2(true, false, false, T, T,
+		        length, D2, false, false, false, false, Dang, Dang, false,
+		        false, false, false, true, true, true, T, StartOffSet, false);
         }
-
     }
 }

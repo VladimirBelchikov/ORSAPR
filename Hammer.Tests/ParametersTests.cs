@@ -14,7 +14,8 @@ namespace Hammer.Tests
         public void CheckParameters_TrueValuesHammerParameters_DoesNotThrow()
         {
             var hammerParameters = GetDefaultHammerParameters();
-            var parametersValidator = new ParametersValidator(hammerParameters);
+            var parametersValidator = new ParametersValidator(
+	            hammerParameters);
 
             Assert.DoesNotThrow(() => parametersValidator.CheckParameters());
         }

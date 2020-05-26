@@ -21,7 +21,7 @@ namespace Hammer.MODEL.Models
             
             _solidWorks = _solidWorksApi.IsThereSolidWorks();
         }
-
+        
         /// <summary>
         /// Создание пустого файла в SolidWorks
         /// </summary>

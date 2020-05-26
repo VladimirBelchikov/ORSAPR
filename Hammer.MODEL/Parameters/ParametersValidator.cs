@@ -22,10 +22,12 @@ namespace Hammer.MODEL.Parameters
         /// <param name="min"></param>
         /// <param name="max"></param>
         /// <param name="paramName"></param>
-        private static void CheckValueRange(double parameter, double min, double max, string paramName)
+        private static void CheckValueRange(double parameter, double min,
+	        double max, string paramName)
         {
             if (!(parameter < min) && !(parameter > max)) return;
-            var message = paramName + " must be in a range from " + min + "mm up to " + max + "mm.";
+            var message = paramName + " must be in a range from " + min
+                          + "mm up to " + max + "mm.";
             throw new ArgumentException(message);
         }
 
@@ -34,19 +36,26 @@ namespace Hammer.MODEL.Parameters
         /// </summary>
         public void CheckParameters()
         {
-            CheckValueRange(_hammerParameters.HeadParameters.Width, 20, 50, "Head width");
+            CheckValueRange(_hammerParameters.HeadParameters.Width,
+	            20, 50, "Head width");
 
-            CheckValueRange(_hammerParameters.HeadParameters.Length, 30, 80, "Head length");
+            CheckValueRange(_hammerParameters.HeadParameters.Length,
+	            30, 80, "Head length");
 
-            CheckValueRange(_hammerParameters.HeadParameters.Height, 20, 50, "Head height");
+            CheckValueRange(_hammerParameters.HeadParameters.Height,
+	            20, 50, "Head height");
 
-            CheckValueRange(_hammerParameters.HeadParameters.ToeLength, 30, 80, "Toe length");
+            CheckValueRange(_hammerParameters.HeadParameters.ToeLength,
+	            30, 80, "Toe length");
 
-            CheckValueRange(_hammerParameters.HeadParameters.TipWidth, 1, 10, "Tip width");
+            CheckValueRange(_hammerParameters.HeadParameters.TipWidth,
+	            1, 10, "Tip width");
 
-            CheckValueRange(_hammerParameters.HandleParameters.Diameter, 15, 40, "Handle diameter");
+            CheckValueRange(_hammerParameters.HandleParameters.Diameter,
+	            15, 40, "Handle diameter");
 
-            CheckValueRange(_hammerParameters.HandleParameters.Length, 80, 200, "Handle length");
+            CheckValueRange(_hammerParameters.HandleParameters.Length,
+	            80, 200, "Handle length");
         }
     }
 }
