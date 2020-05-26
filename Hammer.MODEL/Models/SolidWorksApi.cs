@@ -32,14 +32,14 @@ namespace Hammer.MODEL.Models
         {
             try
             {
-	            var processSolidWorks = System.Activator.CreateInstance
-	                (System.Type.GetTypeFromProgID("SldWorks.Application.28"));
+	            var processSolidWorks = Activator.CreateInstance
+	                (Type.GetTypeFromProgID("SldWorks.Application.28"));
                 return processSolidWorks;
             }
             catch
             {
                 throw new Exception(
-	                "SolidWorks 2020 не найден на вашем компьютере");
+	                "SolidWorks 2020 not found on your PC");
             }
         }
 

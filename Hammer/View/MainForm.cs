@@ -20,7 +20,6 @@ namespace Hammer.View
             _hammerBuilder = new HammerBuilder(_hammerParameters);
         }
 
-
         /// <summary>
         /// Кнопка, вызывающая методы построения модели
         /// </summary>
@@ -30,7 +29,7 @@ namespace Hammer.View
         {
 	        try
             {
-                _hammerParameters.HeadParameters.Width = 
+	            _hammerParameters.HeadParameters.Width = 
 	                double.Parse(HeadWidthTextBox.Text);
                 _hammerParameters.HeadParameters.Length = 
 	                double.Parse(HeadLengthTextBox.Text);
@@ -54,9 +53,9 @@ namespace Hammer.View
                 else
 	                _hammerBuilder.CreateHammerWithToeHead();
             }
-            catch(ArgumentException message)
+			catch(ArgumentException message)
             {
-                MessageBox.Show(message.Message, "Out of range exception",
+                MessageBox.Show(message.Message, @"Out of range exception",
 	                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -131,13 +130,13 @@ namespace Hammer.View
         /// <param name="e"></param>
         private void DefaultParametersButton_Click(object sender, EventArgs e)
         {
-            HeadLengthTextBox.Text = "60";
-            HeadWidthTextBox.Text = "30";
-            HeadHeightTextBox.Text = "30";
-            TipWidthTextBox.Text = "2";
-            ToeLengthTextBox.Text = "50";
-            HandleLengthTextBox.Text = "130";
-            HandleDiameterTextBox.Text = "20";
+            HeadLengthTextBox.Text = @"60";
+            HeadWidthTextBox.Text = @"30";
+            HeadHeightTextBox.Text = @"30";
+            TipWidthTextBox.Text = @"2";
+            ToeLengthTextBox.Text = @"50";
+            HandleLengthTextBox.Text = @"130";
+            HandleDiameterTextBox.Text = @"20";
         }
 
 
